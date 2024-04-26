@@ -1,4 +1,3 @@
-
 package proyecto3;
 
 import java.awt.HeadlessException;
@@ -73,7 +72,6 @@ public class list {
             }
         }
     }
-
 
     public int getlong() {
         int c = 0;
@@ -226,19 +224,20 @@ public class list {
         }
     }
 
-    public Child searchTutorId(String pa) {
+    public void searchTutorId(String pa, JComboBox jCBChild) {
         if (fChild == null) {
-            return null;
+            JOptionPane.showMessageDialog(null, "No hay ningun niño en la lista");
         } else {
             Child p = (Child) getEnd(fChild);
             while (p != null) {
                 if (p.Tutor.id.equals(pa)) {
-                    return p;
+                    String name = p.name;
+                    jCBChild.addItem(makeObj(name));
+                    p = (Child) p.prev;
                 } else {
                     p = (Child) p.prev;
                 }
             }
-            return null;
         }
     }
 
@@ -258,15 +257,16 @@ public class list {
         }
 
     }
-    public void DeleteChild(String i){
+
+    public void DeleteChild(String i) {
         Child p = searchid(i);
-        if (p==fChild){
-            fChild=(Child)fChild.next;
-        }else if (getEnd(fChild)==p){
-            p.prev.next=null;
-        }else{
-            p.prev.next=p.next;
-            p.next.prev=p.prev;
+        if (p == fChild) {
+            fChild = (Child) fChild.next;
+        } else if (getEnd(fChild) == p) {
+            p.prev.next = null;
+        } else {
+            p.prev.next = p.next;
+            p.next.prev = p.prev;
         }
     }
 
@@ -356,9 +356,10 @@ public class list {
         }
         /*holis :v*/
     }
-    
-    public void getDatos(String i, JComboBox ToC, JComboBox SelectC){
-Nodo p = fChild;
+
+    public String getDatos(String i) {
+        Child n = searchid(i);
+        return "El peso del infante es: " + n.weight
+                + " y su talla: " + n.size;
     }
 }
-
