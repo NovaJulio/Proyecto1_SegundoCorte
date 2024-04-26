@@ -1,6 +1,11 @@
 package proyecto3;
 
 import java.awt.HeadlessException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -418,5 +423,31 @@ public class list {
             }
 
         }
+    }
+
+    public void txt(String dir) throws FileNotFoundException, UnsupportedEncodingException {
+Child p = fChild;
+Tutor t = fTutor;
+        String ruta = dir + "archivo.txt";
+
+        File file = new File(ruta);
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+
+        }
+        while (p!=null){
+            PrintWriter writer = new PrintWriter(ruta, "UTF-8");
+                if( isEmpty() ) writer.println("No Hay Nada En La Lista");
+                int i =1;
+                while( p != null){
+                    
+                    writer.println(i);
+                    i++;
+                    p = (Child)p.next;
+                }
+                writer.close();
+        }
+
     }
 }
