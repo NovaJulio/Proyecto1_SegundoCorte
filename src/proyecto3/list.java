@@ -374,13 +374,14 @@ public class list {
     }
 
     public void rowCreator(DefaultTableModel t, int fila, Tutor n) {
-t.setValueAt(n.id, fila, 0);
-t.setValueAt(n.name, fila, 1);
+        t.setValueAt(n.id, fila, 0);
+        t.setValueAt(n.name, fila, 1);
     }
-    public void fillTable(JTable t, boolean ToC){
+
+    public void fillTable(JTable t, boolean ToC) {
         int i = 0;
         DefaultTableModel m = new DefaultTableModel();
-        if(ToC){
+        if (ToC) {
             Child p = fChild;
             m.addColumn("Registro civil");
             m.addColumn("Nombre");
@@ -388,22 +389,23 @@ t.setValueAt(n.name, fila, 1);
             m.addColumn("Nombre del tutor");
             m.addColumn("Peso");
             m.addColumn("Estatura");
-            while(p!=null){
+            while (p != null) {
                 m.addRow(new Object[]{"", "", "", "", "", ""});
                 rowCreator(m, i, p);
-                p=(Child)p.next;
+                p = (Child) p.next;
                 i++;
             }
-        }else{
+        } else {
             Tutor p = fTutor;
             m.addColumn("Identificacion");
             m.addColumn("Nombre");
-            while(p!=null){
+            while (p != null) {
                 m.addRow(new Object[]{"", ""});
                 rowCreator(m, i, p);
-                p=(Tutor)p.next;
+                p = (Tutor) p.next;
                 i++;
+            }
+
         }
-        
     }
 }
