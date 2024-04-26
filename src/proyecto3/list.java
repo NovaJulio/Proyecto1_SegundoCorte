@@ -182,25 +182,36 @@ public class list {
         }
     }
 
+    public Child getPos(int b) {
+        int i = 1;
+        Child n = fChild;
+
+        while (i > b) {
+            n = (Child) n.next;
+            i++;
+        }
+        return n;
+    }
+
     public void addIn(
             JTextField i,
             JTextField n,
             JSpinner s,
             JSpinner w,
             JComboBox tn,
-            JTextField bid
+            int bpos
     ) {
         Nodo p = fChild;
         Nodo info = CreateChild(i, n, s, w, search(tn.getSelectedItem().toString()));
         if (p == null) {
             p = info;
         } else {
-            Nodo sh = searchid(bid.getText());
-            Nodo g = sh.next;
-            sh.next = info;
-            g.prev = info;
-            info.prev = sh;
-            info.next = g;
+            Nodo sh = getPos(bpos);
+            Nodo g = sh.prev;
+            info.prev = g;
+            info.next = sh;
+            g.next = info;
+            sh.prev = info;
         }
     }
 
