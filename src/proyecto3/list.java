@@ -2,6 +2,7 @@ package proyecto3;
 
 import java.awt.HeadlessException;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class list {
 
@@ -361,5 +362,48 @@ public class list {
         Child n = searchid(i);
         return "El peso del infante es: " + n.weight
                 + " y su talla: " + n.size;
+    }
+
+    public void rowCreator(DefaultTableModel t, int fila, Child n) {
+        t.setValueAt(n.id, fila, 0);
+        t.setValueAt(n.name, fila, 1);
+        t.setValueAt(n.Tutor.id, fila, 2);
+        t.setValueAt(n.Tutor.name, fila, 3);
+        t.setValueAt(n.weight, fila, 4);
+        t.setValueAt(n.size, fila, 5);
+    }
+
+    public void rowCreator(DefaultTableModel t, int fila, Tutor n) {
+t.setValueAt(n.id, fila, 0);
+t.setValueAt(n.name, fila, 1);
+    }
+    public void fillTable(JTable t, boolean ToC){
+        int i = 0;
+        DefaultTableModel m = new DefaultTableModel();
+        if(ToC){
+            Child p = fChild;
+            m.addColumn("Registro civil");
+            m.addColumn("Nombre");
+            m.addColumn("Identificacion del tutor");
+            m.addColumn("Nombre del tutor");
+            m.addColumn("Peso");
+            m.addColumn("Estatura");
+            while(p!=null){
+                m.addRow(new Object[]{"", "", "", "", "", ""});
+                rowCreator(m, i, p);
+                p=(Child)p.next;
+                i++;
+            }
+        }else{
+            Tutor p = fTutor;
+            m.addColumn("Identificacion");
+            m.addColumn("Nombre");
+            while(p!=null){
+                m.addRow(new Object[]{"", ""});
+                rowCreator(m, i, p);
+                p=(Tutor)p.next;
+                i++;
+        }
+        
     }
 }
