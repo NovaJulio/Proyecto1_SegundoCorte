@@ -357,8 +357,6 @@ public class list {
     }
     
     public void getDatos(String i, JComboBox ToC, JComboBox SelectC){
-        /*hola
-        si, asi es para hacerlo mas largo*/
-                
+
     }
 }
