@@ -357,6 +357,7 @@ public class list {
     }
     
     public void getDatos(String i, JComboBox ToC, JComboBox SelectC){
-//hOLA JJAJAJAJAJAJAJAJA
+/*hOLA JJAJAJAJAJAJAJAJA
+holis UwU*/
     }
 }
