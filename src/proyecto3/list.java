@@ -357,6 +357,6 @@ public class list {
     }
     
     public void getDatos(String i, JComboBox ToC, JComboBox SelectC){
-
+Nodo p = fChild;
     }
 }
