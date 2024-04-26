@@ -353,7 +353,7 @@ public class list {
                 }
             }
         }
-
+        /*holis :v*/
     }
     
     public void getDatos(String i, JComboBox ToC, JComboBox SelectC){
