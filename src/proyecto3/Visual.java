@@ -1,7 +1,59 @@
 package proyecto3;
 
+import java.awt.Color;
+
 public class Visual extends javax.swing.JFrame {
-    
+
+    public void setPage1true() {
+        Page1.setVisible(true);
+        Page1.setEnabled(true);
+    }
+
+    public void setPage1false() {
+        Page1.setVisible(false);
+        Page1.setEnabled(false);
+    }
+
+    public void setPage2true() {
+        Page2.setVisible(true);
+        Page2.setEnabled(true);
+    }
+
+    public void setPage2false() {
+        Page2.setVisible(false);
+        Page2.setEnabled(false);
+    }
+
+    public void setPage3true() {
+        Page3.setVisible(true);
+        Page3.setEnabled(true);
+    }
+
+    public void setPage3false() {
+        Page3.setVisible(false);
+        Page3.setEnabled(false);
+    }
+
+    public void setPage4true() {
+        Page4.setVisible(true);
+        Page4.setEnabled(true);
+    }
+
+    public void setPage4false() {
+        Page4.setVisible(false);
+        Page4.setEnabled(false);
+    }
+
+    public void setPage5true() {
+        Page5.setVisible(true);
+        Page5.setEnabled(true);
+    }
+
+    public void setPage5false() {
+        Page5.setVisible(false);
+        Page5.setEnabled(false);
+    }
+
     public Visual() {
         this.setUndecorated(true);
         initComponents();
@@ -17,166 +69,440 @@ public class Visual extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        Plant = new javax.swing.JPanel();
+        Page1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        Page2 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        Page3 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jTextField5 = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        jTextField6 = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JSeparator();
+        Page4 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jSeparator8 = new javax.swing.JSeparator();
+        jTextField8 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        Page5 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        setPage1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
+        setPage2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        setPage3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        setPage4 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        setPage5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
+        Exit = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Plant.setBackground(new java.awt.Color(255, 255, 255));
+        Plant.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Page1.setBackground(new java.awt.Color(204, 204, 204));
+        Page1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Sistema de administracion de datos de niños bajos en peso (yo)");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 410, 30));
+        Page1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 410, 30));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Julio Eliecer Nova Estrada");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 170, 20));
+        Page1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 170, 20));
 
         jLabel9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Jorge Eliecer Oviedo Vanegas");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 200, -1));
+        Page1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 200, -1));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Programacion 2 - Proyecto 3");
+        Page1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 530, 190, -1));
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Plant.add(Page1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Ver tabla");
+        Page2.setBackground(new java.awt.Color(204, 204, 204));
+        Page2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addContainerGap(53, Short.MAX_VALUE))
+        jLabel11.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Ingrese los datos del acudiente:");
+        Page2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 22, 214, 26));
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("Id:");
+        Page2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 66, -1, -1));
+
+        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1.setBorder(null);
+        Page2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 160, 20));
+        Page2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 200, 10));
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("Nombre:");
+        Page2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+
+        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField2.setBorder(null);
+        Page2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 160, 20));
+        Page2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 200, 12));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Identificacion", "Nombre"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        Page2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 500, 530));
+
+        Plant.add(Page2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
+
+        Page3.setBackground(new java.awt.Color(204, 204, 204));
+        Page3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("Id:");
+        Page3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setText("Ingrese los datos del infante:");
+        Page3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        jTextField3.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField3.setBorder(null);
+        Page3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 140, 20));
+        Page3.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 170, 10));
+
+        jLabel16.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("Nombre:");
+        Page3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, -1, -1));
+
+        jTextField4.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField4.setBorder(null);
+        Page3.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 140, 20));
+        Page3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 170, 10));
+
+        jLabel17.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("ALtura (m):");
+        Page3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setText("Peso (Kg):");
+        Page3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
+
+        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
+        jComboBox1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Acudiente" }));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Page3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, 200, 30));
+
+        jTextField5.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField5.setBorder(null);
+        Page3.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 140, 20));
+        Page3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 170, 10));
+
+        jTextField6.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField6.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField6.setBorder(null);
+        Page3.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 140, 20));
+        Page3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 170, 10));
+
+        jLabel19.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setText("Seleccionar acudiente:");
+        Page3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 160, -1));
+
+        jLabel20.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setText("Municipio:");
+        Page3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, -1, -1));
+
+        jTextField7.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField7.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField7.setBorder(null);
+        Page3.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 140, 20));
+        Page3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 170, 10));
+
+        Plant.add(Page3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
+
+        Page4.setBackground(new java.awt.Color(204, 204, 204));
+        Page4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Identificacion", "Nombre", "Altura", "Peso", "Tutor", "Municipio"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
+
+        Page4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 770, 420));
+
+        jLabel21.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel21.setText("Informacion del infante:");
+        Page4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 160, -1));
+
+        jLabel22.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel22.setText("Buscar Id:");
+        Page4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, -1, -1));
+        Page4.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 170, 10));
+
+        jTextField8.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField8.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField8.setBorder(null);
+        Page4.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 140, 20));
+
+        jButton1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jButton1.setText("Buscar");
+        Page4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, 100, -1));
+
+        Plant.add(Page4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
+
+        Page5.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel23.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel23.setText("Reporte (no se que va aquí)");
+
+        javax.swing.GroupLayout Page5Layout = new javax.swing.GroupLayout(Page5);
+        Page5.setLayout(Page5Layout);
+        Page5Layout.setHorizontalGroup(
+            Page5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Page5Layout.createSequentialGroup()
+                .addContainerGap(166, Short.MAX_VALUE)
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(126, 126, 126))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+        Page5Layout.setVerticalGroup(
+            Page5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Page5Layout.createSequentialGroup()
+                .addGap(159, 159, 159)
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(398, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 120, 40));
+        Plant.add(Page5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
 
-        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText(" Añadir acudiente");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-        );
-
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 120, 40));
-
-        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Añadir infante");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-        );
-
-        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 120, 40));
-
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        setPage1.setBackground(new java.awt.Color(204, 204, 204));
+        setPage1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setPage1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                setPage1MouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Inicio");
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout setPage1Layout = new javax.swing.GroupLayout(setPage1);
+        setPage1.setLayout(setPage1Layout);
+        setPage1Layout.setHorizontalGroup(
+            setPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(setPage1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        setPage1Layout.setVerticalGroup(
+            setPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 40));
+        Plant.add(setPage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 40));
 
-        jPanel7.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        setPage2.setBackground(new java.awt.Color(153, 153, 153));
+        setPage2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setPage2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                setPage2MouseClicked(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText(" Añadir acudiente");
+
+        javax.swing.GroupLayout setPage2Layout = new javax.swing.GroupLayout(setPage2);
+        setPage2.setLayout(setPage2Layout);
+        setPage2Layout.setHorizontalGroup(
+            setPage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, setPage2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        setPage2Layout.setVerticalGroup(
+            setPage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, setPage2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        Plant.add(setPage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 120, 40));
+
+        setPage3.setBackground(new java.awt.Color(153, 153, 153));
+        setPage3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setPage3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                setPage3MouseClicked(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Añadir infante");
+
+        javax.swing.GroupLayout setPage3Layout = new javax.swing.GroupLayout(setPage3);
+        setPage3.setLayout(setPage3Layout);
+        setPage3Layout.setHorizontalGroup(
+            setPage3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(setPage3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        setPage3Layout.setVerticalGroup(
+            setPage3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+        );
+
+        Plant.add(setPage3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 120, 40));
+
+        setPage4.setBackground(new java.awt.Color(153, 153, 153));
+        setPage4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setPage4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                setPage4MouseClicked(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Ver tabla");
+
+        javax.swing.GroupLayout setPage4Layout = new javax.swing.GroupLayout(setPage4);
+        setPage4.setLayout(setPage4Layout);
+        setPage4Layout.setHorizontalGroup(
+            setPage4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(setPage4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+        setPage4Layout.setVerticalGroup(
+            setPage4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+        );
+
+        Plant.add(setPage4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 120, 40));
+
+        setPage5.setBackground(new java.awt.Color(153, 153, 153));
+        setPage5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setPage5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                setPage5MouseClicked(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Reporte");
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+        javax.swing.GroupLayout setPage5Layout = new javax.swing.GroupLayout(setPage5);
+        setPage5.setLayout(setPage5Layout);
+        setPage5Layout.setHorizontalGroup(
+            setPage5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, setPage5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        setPage5Layout.setVerticalGroup(
+            setPage5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 120, 40));
+        Plant.add(setPage5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 120, 40));
 
-        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel9.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Exit.setBackground(new java.awt.Color(255, 255, 255));
+        Exit.setForeground(new java.awt.Color(204, 204, 204));
+        Exit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 0, 0));
@@ -186,19 +512,19 @@ public class Visual extends javax.swing.JFrame {
                 jLabel6MouseClicked(evt);
             }
         });
-        jPanel9.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
+        Exit.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
 
-        jPanel3.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 0, 40, 40));
+        Plant.add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 0, 40, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Plant, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Plant, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -207,6 +533,71 @@ public class Visual extends javax.swing.JFrame {
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         System.exit(0);
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void setPage1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setPage1MouseClicked
+        setPage2false();
+        setPage3false();
+        setPage4false();
+        setPage5false();
+        setPage1true();
+        setPage1.setBackground(new Color(204, 204, 204));
+        setPage2.setBackground(new Color(153, 153, 153));
+        setPage3.setBackground(new Color(153, 153, 153));
+        setPage4.setBackground(new Color(153, 153, 153));
+        setPage5.setBackground(new Color(153, 153, 153));
+    }//GEN-LAST:event_setPage1MouseClicked
+
+    private void setPage2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setPage2MouseClicked
+        setPage1false();
+        setPage3false();
+        setPage4false();
+        setPage5false();
+        setPage2true();
+        setPage2.setBackground(new Color(204, 204, 204));
+        setPage1.setBackground(new Color(153, 153, 153));
+        setPage3.setBackground(new Color(153, 153, 153));
+        setPage4.setBackground(new Color(153, 153, 153));
+        setPage5.setBackground(new Color(153, 153, 153));
+    }//GEN-LAST:event_setPage2MouseClicked
+
+    private void setPage3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setPage3MouseClicked
+        setPage1false();
+        setPage2false();
+        setPage4false();
+        setPage5false();
+        setPage3true();
+        setPage3.setBackground(new Color(204, 204, 204));
+        setPage1.setBackground(new Color(153, 153, 153));
+        setPage2.setBackground(new Color(153, 153, 153));
+        setPage4.setBackground(new Color(153, 153, 153));
+        setPage5.setBackground(new Color(153, 153, 153));
+    }//GEN-LAST:event_setPage3MouseClicked
+
+    private void setPage4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setPage4MouseClicked
+        setPage1false();
+        setPage2false();
+        setPage3false();
+        setPage5false();
+        setPage4true();
+        setPage4.setBackground(new Color(204, 204, 204));
+        setPage1.setBackground(new Color(153, 153, 153));
+        setPage2.setBackground(new Color(153, 153, 153));
+        setPage3.setBackground(new Color(153, 153, 153));
+        setPage5.setBackground(new Color(153, 153, 153));
+    }//GEN-LAST:event_setPage4MouseClicked
+
+    private void setPage5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setPage5MouseClicked
+        setPage1false();
+        setPage2false();
+        setPage3false();
+        setPage4false();
+        setPage5true();
+        setPage5.setBackground(new Color(204, 204, 204));
+        setPage1.setBackground(new Color(153, 153, 153));
+        setPage2.setBackground(new Color(153, 153, 153));
+        setPage3.setBackground(new Color(153, 153, 153));
+        setPage4.setBackground(new Color(153, 153, 153));
+    }//GEN-LAST:event_setPage5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -244,8 +635,31 @@ public class Visual extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Exit;
+    private javax.swing.JPanel Page1;
+    private javax.swing.JPanel Page2;
+    private javax.swing.JPanel Page3;
+    private javax.swing.JPanel Page4;
+    private javax.swing.JPanel Page5;
+    private javax.swing.JPanel Plant;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -253,13 +667,30 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JPanel setPage1;
+    private javax.swing.JPanel setPage2;
+    private javax.swing.JPanel setPage3;
+    private javax.swing.JPanel setPage4;
+    private javax.swing.JPanel setPage5;
     // End of variables declaration//GEN-END:variables
 }
