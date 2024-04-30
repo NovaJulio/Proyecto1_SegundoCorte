@@ -122,6 +122,7 @@ public class list {
             JTextField n,
             JSpinner s,
             JSpinner w,
+            JTextField m,
             Tutor a) {
         Child buscar = null;
         try {
@@ -134,7 +135,7 @@ public class list {
                 i.requestFocus();
                 return null;
             } else {
-                Child info = new Child((Integer) s.getValue(), (Float) w.getValue(), a, i.getText(), n.getText());
+                Child info = new Child((Integer) s.getValue(), (Float) w.getValue(), a, i.getText(), n.getText(), m.getText());
                 return info;
             }
         } catch (HeadlessException e) {
@@ -175,10 +176,11 @@ public class list {
             JTextField n,
             JSpinner s,
             JSpinner w,
+            JTextField m,
             JComboBox tn
     ) {
         Nodo p = fChild;
-        Nodo info = CreateChild(i, n, s, w, search(tn.getSelectedItem().toString()));
+        Nodo info = CreateChild(i, n, s, w, m, search(tn.getSelectedItem().toString()));
         if (p == null) {
             p = info;
         } else {
@@ -204,10 +206,11 @@ public class list {
             JSpinner s,
             JSpinner w,
             JComboBox tn,
+            JTextField m,
             int bpos
     ) {
         Nodo p = fChild;
-        Nodo info = CreateChild(i, n, s, w, search(tn.getSelectedItem().toString()));
+        Nodo info = CreateChild(i, n, s, w, m, search(tn.getSelectedItem().toString()));
         if (p == null) {
             p = info;
         } else {
@@ -225,9 +228,10 @@ public class list {
             JTextField n,
             JSpinner s,
             JSpinner w,
+            JTextField m,
             JComboBox tn) {
         Nodo p = fChild;
-        Nodo info = CreateChild(i, n, s, w, search(tn.getSelectedItem().toString()));
+        Nodo info = CreateChild(i, n, s, w, m, search(tn.getSelectedItem().toString()));
         if (p == null) {
             p = info;
         } else {
@@ -371,7 +375,6 @@ public class list {
                 }
             }
         }
-        /*holis :v*/
     }
 
     public String getDatos(String i) {
@@ -405,8 +408,9 @@ public class list {
             m.addColumn("Nombre del tutor");
             m.addColumn("Peso");
             m.addColumn("Estatura");
+            m.addColumn("Municipio");
             while (p != null) {
-                m.addRow(new Object[]{"", "", "", "", "", ""});
+                m.addRow(new Object[]{"", "", "", "", "", "", ""});
                 rowCreator(m, i, p);
                 p = (Child) p.next;
                 i++;
