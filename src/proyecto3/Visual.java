@@ -3,7 +3,7 @@ package proyecto3;
 import java.awt.Color;
 
 public class Visual extends javax.swing.JFrame {
-    
+    list list = new list();
     public Visual() {
         this.setUndecorated(true);
         initComponents();
@@ -82,7 +82,7 @@ public class Visual extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField5 = new javax.swing.JTextField();
+        m = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -91,6 +91,9 @@ public class Visual extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        Pos = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel24 = new javax.swing.JLabel();
         Page1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -181,10 +184,10 @@ public class Visual extends javax.swing.JFrame {
         jComboBox1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Page3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, 200, 30));
 
-        jTextField5.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField5.setBorder(null);
-        Page3.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 140, 20));
+        m.setBackground(new java.awt.Color(204, 204, 204));
+        m.setForeground(new java.awt.Color(0, 0, 0));
+        m.setBorder(null);
+        Page3.add(m, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 140, 20));
         Page3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 170, 10));
 
         jLabel19.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -210,17 +213,43 @@ public class Visual extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jButton2.setText("añadir despues de");
         jButton2.setBorder(null);
-        Page3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 150, 30));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        Page3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 150, 30));
 
         jButton3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jButton3.setText("Añadir al final");
         jButton3.setBorder(null);
-        Page3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 150, 30));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        Page3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 150, 30));
 
         jButton4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jButton4.setText("Añadir al inicio");
         jButton4.setBorder(null);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         Page3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 150, 30));
+
+        Pos.setBackground(new java.awt.Color(204, 204, 204));
+        Pos.setForeground(new java.awt.Color(0, 0, 0));
+        Pos.setBorder(null);
+        Page3.add(Pos, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 140, 20));
+        Page3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 450, 170, 10));
+
+        jLabel24.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel24.setText("Posición:");
+        Page3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 70, -1));
 
         Plant.add(Page3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
 
@@ -614,6 +643,18 @@ public class Visual extends javax.swing.JFrame {
         setPage4.setBackground(new Color(153, 153, 153));
     }//GEN-LAST:event_setPage5MouseClicked
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        list.addCab(i, n, s, w, m, jComboBox1);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        list.addChildToEnd(i, n, s, w, m, jComboBox1);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        list.addIn(i, n, s, w, jComboBox1, m, ERROR);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -657,6 +698,7 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JPanel Page4;
     private javax.swing.JPanel Page5;
     private javax.swing.JPanel Plant;
+    private javax.swing.JTextField Pos;
     private javax.swing.JTextField i;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -679,6 +721,7 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -693,13 +736,14 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField m;
     private javax.swing.JTextField n;
     private javax.swing.JSpinner s;
     private javax.swing.JPanel setPage1;
