@@ -71,21 +71,6 @@ public class Visual extends javax.swing.JFrame {
     private void initComponents() {
 
         Plant = new javax.swing.JPanel();
-        Page1 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        Page2 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel13 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jSeparator2 = new javax.swing.JSeparator();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         Page3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -103,6 +88,24 @@ public class Visual extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         w = new javax.swing.JSpinner();
         s = new javax.swing.JSpinner();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        Page1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        Page2 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         Page4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -130,6 +133,96 @@ public class Visual extends javax.swing.JFrame {
 
         Plant.setBackground(new java.awt.Color(255, 255, 255));
         Plant.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Page3.setBackground(new java.awt.Color(204, 204, 204));
+        Page3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("Id:");
+        Page3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setText("Ingrese los datos del infante:");
+        Page3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        i.setBackground(new java.awt.Color(204, 204, 204));
+        i.setForeground(new java.awt.Color(0, 0, 0));
+        i.setBorder(null);
+        Page3.add(i, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 140, 20));
+        Page3.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 170, 10));
+
+        jLabel16.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("Nombre:");
+        Page3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, -1, -1));
+
+        n.setBackground(new java.awt.Color(204, 204, 204));
+        n.setForeground(new java.awt.Color(0, 0, 0));
+        n.setBorder(null);
+        Page3.add(n, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 140, 20));
+        Page3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 170, 10));
+
+        jLabel17.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("ALtura (cm):");
+        Page3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setText("Peso (Kg):");
+        Page3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
+
+        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
+        jComboBox1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Acudiente" }));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Page3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, 200, 30));
+
+        jTextField5.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField5.setBorder(null);
+        Page3.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 140, 20));
+        Page3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 170, 10));
+
+        jLabel19.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setText("Seleccionar acudiente:");
+        Page3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 160, -1));
+
+        jLabel20.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setText("Municipio:");
+        Page3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, -1, -1));
+
+        w.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        w.setModel(new javax.swing.SpinnerNumberModel(Float.valueOf(40.0f), Float.valueOf(10.0f), Float.valueOf(120.0f), Float.valueOf(0.1f)));
+        w.setBorder(null);
+        Page3.add(w, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 120, 20));
+
+        s.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        s.setModel(new javax.swing.SpinnerNumberModel(100, 30, 220, 1));
+        s.setBorder(null);
+        Page3.add(s, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 120, 20));
+
+        jButton2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jButton2.setText("añadir despues de");
+        jButton2.setBorder(null);
+        Page3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 150, 30));
+
+        jButton3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jButton3.setText("Añadir al final");
+        jButton3.setBorder(null);
+        Page3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 150, 30));
+
+        jButton4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jButton4.setText("Añadir al inicio");
+        jButton4.setBorder(null);
+        Page3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 150, 30));
+
+        Plant.add(Page3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
 
         Page1.setBackground(new java.awt.Color(204, 204, 204));
         Page1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -209,81 +302,6 @@ public class Visual extends javax.swing.JFrame {
         Page2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 500, 530));
 
         Plant.add(Page2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
-
-        Page3.setBackground(new java.awt.Color(204, 204, 204));
-        Page3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel14.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel14.setText("Id:");
-        Page3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
-
-        jLabel15.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel15.setText("Ingrese los datos del infante:");
-        Page3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
-
-        i.setBackground(new java.awt.Color(204, 204, 204));
-        i.setForeground(new java.awt.Color(0, 0, 0));
-        i.setBorder(null);
-        Page3.add(i, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 140, 20));
-        Page3.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 170, 10));
-
-        jLabel16.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel16.setText("Nombre:");
-        Page3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, -1, -1));
-
-        n.setBackground(new java.awt.Color(204, 204, 204));
-        n.setForeground(new java.awt.Color(0, 0, 0));
-        n.setBorder(null);
-        Page3.add(n, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 140, 20));
-        Page3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 170, 10));
-
-        jLabel17.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel17.setText("ALtura (cm):");
-        Page3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
-
-        jLabel18.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel18.setText("Peso (Kg):");
-        Page3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
-
-        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Acudiente" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        Page3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, 200, 30));
-
-        jTextField5.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField5.setBorder(null);
-        Page3.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 140, 20));
-        Page3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 170, 10));
-
-        jLabel19.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel19.setText("Seleccionar acudiente:");
-        Page3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 160, -1));
-
-        jLabel20.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel20.setText("Municipio:");
-        Page3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, -1, -1));
-
-        w.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        w.setModel(new javax.swing.SpinnerNumberModel(Float.valueOf(40.0f), Float.valueOf(10.0f), Float.valueOf(120.0f), Float.valueOf(0.1f)));
-        w.setBorder(null);
-        Page3.add(w, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 120, 20));
-
-        s.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        s.setModel(new javax.swing.SpinnerNumberModel(100, 30, 220, 1));
-        s.setBorder(null);
-        Page3.add(s, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 120, 20));
-
-        Plant.add(Page3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
 
         Page4.setBackground(new java.awt.Color(204, 204, 204));
         Page4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -641,6 +659,9 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JPanel Plant;
     private javax.swing.JTextField i;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
