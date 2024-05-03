@@ -682,7 +682,7 @@ public class Visual extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         list.addTutorToEnd(idTu, naTu);
         nnT++;
-        list.actJCBtutor(jComboBox1, idTu.getText());
+        list.actJCBtutor(jComboBox1);
         list.fillTable(tabTu, false);
         System.out.println(""+list.TNE(nnT).id);
     }//GEN-LAST:event_jButton5ActionPerformed

@@ -62,20 +62,14 @@ public class list {
         return fChild == null;
     }
 
-    public void actJCBtutor(JComboBox jCBtutor, String pa) {
+    public void actJCBtutor(JComboBox jCBtutor) {
         jCBtutor.removeAllItems();
-        if (fTutor != null) {
-            Tutor p = fTutor;
-            while (p != null) {
-                if (pa.equals(p.name)) {
-                    String name = p.name;
-                    jCBtutor.addItem(makeObj(name));
-                    p = (Tutor) p.next;
-                } else {
-                    p = (Tutor) p.next;
-                }
-            }
-        }
+        jCBtutor.addItem("Acudientes");
+        Tutor p = fTutor;
+while(p!=null){
+    jCBtutor.addItem(p.name);
+    p=(Tutor)p.next;
+}
     }
 
     public int getlong() {
