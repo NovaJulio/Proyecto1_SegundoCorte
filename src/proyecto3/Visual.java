@@ -5,6 +5,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class Visual extends javax.swing.JFrame {
 
+    int nnT = 0;
     list list = new list();
 
     public Visual() {
@@ -14,6 +15,11 @@ public class Visual extends javax.swing.JFrame {
         DefaultTableModel Tabla = new DefaultTableModel();
         list.fillTable(tabIn, true);
         list.fillTable(tabTu, false);
+        Page1.setVisible(true);
+        Page2.setVisible(false);
+        Page3.setVisible(false);
+        Page4.setVisible(false);
+        Page5.setVisible(false);
     }
 
     public void setPage1true() {
@@ -675,7 +681,10 @@ public class Visual extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         list.addTutorToEnd(idTu, naTu);
+        nnT++;
+        list.actJCBtutor(jComboBox1, idTu.getText());
         list.fillTable(tabTu, false);
+        System.out.println(""+list.TNE(nnT).id);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**

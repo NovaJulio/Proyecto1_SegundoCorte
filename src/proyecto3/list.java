@@ -24,8 +24,6 @@ public class list {
     }
 
     public list() {
-        fChild = null;
-        fTutor = null;
     }
 
     public Child searchid(String pa) {
@@ -69,9 +67,10 @@ public class list {
         if (fTutor != null) {
             Tutor p = fTutor;
             while (p != null) {
-                if (p.name.startsWith(pa)) {
+                if (pa.equals(p.name)) {
                     String name = p.name;
                     jCBtutor.addItem(makeObj(name));
+                    p = (Tutor) p.next;
                 } else {
                     p = (Tutor) p.next;
                 }
@@ -136,6 +135,7 @@ public class list {
                 return null;
             } else {
                 Child info = new Child((Integer) s.getValue(), (Float) w.getValue(), a, i.getText(), n.getText(), m.getText());
+                System.out.println("True");
                 return info;
             }
         } catch (HeadlessException e) {
@@ -156,6 +156,18 @@ public class list {
         }
     }
 
+    public Tutor getEndTutor() {
+        if (fTutor == null) {
+            return null;
+        } else {
+            Tutor p = fTutor;
+            while (p.next != null) {
+                p = (Tutor) p.next;
+            }
+            return p;
+        }
+    }
+
     public void addTutorToEnd(
             JTextField i,
             JTextField n
@@ -163,12 +175,26 @@ public class list {
         Nodo p = fTutor;
         Nodo info = CreateTutor(i, n);
         if (p == null) {
-            p = info;
+            fTutor = (Tutor) info;
         } else {
-            Nodo ult = getEnd(p);
+            Tutor ult = getEndTutor();
             ult.next = info;
             info.prev = ult;
         }
+    }
+
+    public Tutor TNE(int pos) {
+        Tutor p = fTutor;
+        int i = 1;
+        while (p != null) {
+            if (i == pos) {
+                return p;
+            } else {
+                p = (Tutor) p.next;
+                i++;
+            }
+        }
+        return null;
     }
 
     public void addChildToEnd(
@@ -245,7 +271,7 @@ public class list {
         }
     }
 
-    public void searchTutorId(String pa, JComboBox jCBChild) {
+    public void searchByTutorId(String pa, JComboBox jCBChild) {
         if (fChild == null) {
             JOptionPane.showMessageDialog(null, "No hay ningun niño en la lista");
         } else {
@@ -430,8 +456,8 @@ public class list {
     }
 
     public void txt(String dir) throws FileNotFoundException, UnsupportedEncodingException {
-Child p = fChild;
-Tutor t = fTutor;
+        Child p = fChild;
+        Tutor t = fTutor;
         String ruta = dir + "archivo.txt";
 
         File file = new File(ruta);
@@ -440,17 +466,19 @@ Tutor t = fTutor;
         } catch (IOException e) {
 
         }
-        while (p!=null){
+        while (p != null) {
             PrintWriter writer = new PrintWriter(ruta, "UTF-8");
-                if( isEmpty() ) writer.println("No Hay Nada En La Lista");
-                int i =1;
-                while( p != null){
-                    
-                    writer.println(i);
-                    i++;
-                    p = (Child)p.next;
-                }
-                writer.close();
+            if (isEmpty()) {
+                writer.println("No Hay Nada En La Lista");
+            }
+            int i = 1;
+            while (p != null) {
+
+                writer.println(i);
+                i++;
+                p = (Child) p.next;
+            }
+            writer.close();
         }
 
     }
