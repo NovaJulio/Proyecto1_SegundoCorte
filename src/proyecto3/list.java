@@ -451,7 +451,7 @@ public class list {
                 p = (Tutor) p.next;
                 i++;
             }
-
+            t.setModel(m);
         }
     }
 
