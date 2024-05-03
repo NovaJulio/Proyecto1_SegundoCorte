@@ -24,6 +24,8 @@ public class list {
     }
 
     public list() {
+        fChild =null;
+        fTutor = null;
     }
 
     public Child searchid(String pa) {
@@ -42,13 +44,29 @@ public class list {
         }
     }
 
-    public Tutor search(String pa) {
+    public Tutor search(int pa) {
         if (fTutor == null) {
             return null;
         } else {
             Tutor p = fTutor;
             while (p != null) {
                 if (p.id.equals(pa)) {
+                    return p;
+                } else {
+                    p = (Tutor) p.next;
+                }
+            }
+            return null;
+        }
+    }
+
+    public Tutor search(String pa) {
+        if (fTutor == null) {
+            return null;
+        } else {
+            Tutor p = fTutor;
+            while (p != null) {
+                if (p.name.equals(pa)) {
                     return p;
                 } else {
                     p = (Tutor) p.next;
@@ -66,10 +84,10 @@ public class list {
         jCBtutor.removeAllItems();
         jCBtutor.addItem("Acudientes");
         Tutor p = fTutor;
-while(p!=null){
-    jCBtutor.addItem(p.name);
-    p=(Tutor)p.next;
-}
+        while (p != null) {
+            jCBtutor.addItem(p.name);
+            p = (Tutor) p.next;
+        }
     }
 
     public int getlong() {
@@ -92,7 +110,7 @@ while(p!=null){
             JTextField n) {
         Tutor search = null;
         try {
-            search = search(i.getText());
+            search = search(Integer.parseInt(i.getText()));
             if (search != null) {
                 JOptionPane.showMessageDialog(null,
                         "Error: Esta identificacion ya se encuentra "
@@ -128,7 +146,7 @@ while(p!=null){
                 i.requestFocus();
                 return null;
             } else {
-                Child info = new Child((Integer) s.getValue(), (Float) w.getValue(), a, i.getText(), n.getText(), m.getText());
+                Child info = new Child((Integer) s.getValue(), (Float) w.getValue(), a, n.getText(), i.getText(), m.getText());
                 System.out.println("True");
                 return info;
             }
@@ -199,14 +217,17 @@ while(p!=null){
             JTextField m,
             JComboBox tn
     ) {
-        Nodo p = fChild;
-        Nodo info = CreateChild(i, n, s, w, m, search(tn.getSelectedItem().toString()));
+        Child p = fChild;
+        Child info = CreateChild(i, n, s, w, m, search(tn.getSelectedItem().toString()));
         if (p == null) {
-            p = info;
+            fChild = info;
         } else {
-            getEnd(p).next = info;
+            Child ult = (Child) getEnd(p);
+            ult.next = info;
+
             info.prev = getEnd(p);
         }
+        System.out.println("" + info.name);
     }
 
     public Child getPos(int b) {
@@ -250,18 +271,22 @@ while(p!=null){
             JSpinner w,
             JTextField m,
             JComboBox tn) {
-        Nodo p = fChild;
-        Nodo info = CreateChild(i, n, s, w, m, search(tn.getSelectedItem().toString()));
-        if (p == null) {
-            p = info;
-        } else {
-            Nodo ne = p.next;
-            Nodo oCab = p;
-            p = info;
+        Child info = CreateChild(i, n, s, w, m, search(tn.getSelectedItem().toString()));
+        if(fChild==null) {
+            fChild = info;
+        } else if (fChild.next != null) {
+            Nodo ne = fChild.next;
+            Nodo oCab = fChild;
+            fChild = info;
             ne.prev = oCab;
-            p.next = oCab;
-            oCab.prev = p;
+            fChild.next = oCab;
+            oCab.prev = fChild;
             oCab.next = ne;
+        }else{
+            Child oCab = (Child) fChild;
+            fChild.next = oCab;
+            fChild = info;
+            oCab.prev= fChild;
         }
     }
 
@@ -410,6 +435,7 @@ while(p!=null){
         t.setValueAt(n.Tutor.name, fila, 3);
         t.setValueAt(n.weight, fila, 4);
         t.setValueAt(n.size, fila, 5);
+        t.setValueAt(n.Municipio, fila, 6);
     }
 
     public void rowCreator(DefaultTableModel t, int fila, Tutor n) {
@@ -434,6 +460,7 @@ while(p!=null){
                 rowCreator(m, i, p);
                 p = (Child) p.next;
                 i++;
+                t.setModel(m);
             }
         } else {
             Tutor p = fTutor;
@@ -444,8 +471,9 @@ while(p!=null){
                 rowCreator(m, i, p);
                 p = (Tutor) p.next;
                 i++;
+                t.setModel(m);
             }
-            t.setModel(m);
+
         }
     }
 

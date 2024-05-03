@@ -129,6 +129,7 @@ public class Visual extends javax.swing.JFrame {
         jSeparator8 = new javax.swing.JSeparator();
         jTextField8 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         Page5 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         setPage1 = new javax.swing.JPanel();
@@ -396,6 +397,14 @@ public class Visual extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jButton1.setText("Buscar");
         Page4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, 100, -1));
+
+        jButton6.setText("jButton6");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        Page4.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         Plant.add(Page4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
 
@@ -687,6 +696,10 @@ public class Visual extends javax.swing.JFrame {
         System.out.println(""+list.TNE(nnT).id);
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+list.fillTable(tabIn, true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -738,6 +751,7 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
