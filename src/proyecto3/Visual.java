@@ -1,13 +1,19 @@
 package proyecto3;
 
 import java.awt.Color;
+import javax.swing.table.DefaultTableModel;
 
 public class Visual extends javax.swing.JFrame {
+
     list list = new list();
+
     public Visual() {
         this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
+        DefaultTableModel Tabla = new DefaultTableModel();
+        list.fillTable(tabIn, true);
+        list.fillTable(tabTu, false);
     }
 
     public void setPage1true() {
@@ -60,7 +66,6 @@ public class Visual extends javax.swing.JFrame {
         Page5.setEnabled(false);
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,6 +76,22 @@ public class Visual extends javax.swing.JFrame {
     private void initComponents() {
 
         Plant = new javax.swing.JPanel();
+        Page1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        Page2 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        idTu = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel13 = new javax.swing.JLabel();
+        naTu = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabTu = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
         Page3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -94,24 +115,9 @@ public class Visual extends javax.swing.JFrame {
         Pos = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel24 = new javax.swing.JLabel();
-        Page1 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        Page2 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel13 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jSeparator2 = new javax.swing.JSeparator();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         Page4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tabIn = new javax.swing.JTable();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
@@ -136,6 +142,94 @@ public class Visual extends javax.swing.JFrame {
 
         Plant.setBackground(new java.awt.Color(255, 255, 255));
         Plant.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Page1.setBackground(new java.awt.Color(204, 204, 204));
+        Page1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Sistema de administracion de datos de niños bajos en peso (yo)");
+        Page1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 410, 30));
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Julio Eliecer Nova Estrada");
+        Page1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 170, 20));
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Jorge Eliecer Oviedo Vanegas");
+        Page1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 200, -1));
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Programacion 2 - Proyecto 3");
+        Page1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 530, 190, -1));
+
+        Plant.add(Page1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
+
+        Page2.setBackground(new java.awt.Color(204, 204, 204));
+        Page2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Ingrese los datos del acudiente:");
+        Page2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 22, 214, 26));
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("Id:");
+        Page2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 66, -1, -1));
+
+        idTu.setBackground(new java.awt.Color(204, 204, 204));
+        idTu.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        idTu.setForeground(new java.awt.Color(0, 0, 0));
+        idTu.setBorder(null);
+        Page2.add(idTu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 160, 20));
+        Page2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 200, 10));
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("Nombre:");
+        Page2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+
+        naTu.setBackground(new java.awt.Color(204, 204, 204));
+        naTu.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        naTu.setForeground(new java.awt.Color(0, 0, 0));
+        naTu.setBorder(null);
+        Page2.add(naTu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 160, 20));
+        Page2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 200, 12));
+
+        tabTu.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Identificacion", "Nombre"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tabTu);
+
+        Page2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 500, 530));
+
+        jButton5.setText("Añadir tutor");
+        jButton5.setBorder(null);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        Page2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 130, 30));
+
+        Plant.add(Page2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
 
         Page3.setBackground(new java.awt.Color(204, 204, 204));
         Page3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -253,90 +347,11 @@ public class Visual extends javax.swing.JFrame {
 
         Plant.add(Page3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
 
-        Page1.setBackground(new java.awt.Color(204, 204, 204));
-        Page1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Sistema de administracion de datos de niños bajos en peso (yo)");
-        Page1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 410, 30));
-
-        jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Julio Eliecer Nova Estrada");
-        Page1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 170, 20));
-
-        jLabel9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Jorge Eliecer Oviedo Vanegas");
-        Page1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 200, -1));
-
-        jLabel10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Programacion 2 - Proyecto 3");
-        Page1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 530, 190, -1));
-
-        Plant.add(Page1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
-
-        Page2.setBackground(new java.awt.Color(204, 204, 204));
-        Page2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel11.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("Ingrese los datos del acudiente:");
-        Page2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 22, 214, 26));
-
-        jLabel12.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("Id:");
-        Page2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 66, -1, -1));
-
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1.setBorder(null);
-        Page2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 160, 20));
-        Page2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 200, 10));
-
-        jLabel13.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel13.setText("Nombre:");
-        Page2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
-
-        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField2.setBorder(null);
-        Page2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 160, 20));
-        Page2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 200, 12));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Identificacion", "Nombre"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
-        Page2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 500, 530));
-
-        Plant.add(Page2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
-
         Page4.setBackground(new java.awt.Color(204, 204, 204));
         Page4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tabIn.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        tabIn.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null}
             },
@@ -352,7 +367,7 @@ public class Visual extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tabIn);
 
         Page4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 770, 420));
 
@@ -645,15 +660,23 @@ public class Visual extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         list.addCab(i, n, s, w, m, jComboBox1);
+        list.fillTable(tabIn, true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         list.addChildToEnd(i, n, s, w, m, jComboBox1);
+        list.fillTable(tabIn, true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        list.addIn(i, n, s, w, jComboBox1, m, ERROR);
+        list.addIn(i, n, s, w, jComboBox1, m, Integer.parseInt(Pos.getText()));
+        list.fillTable(tabIn, true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        list.addTutorToEnd(idTu, naTu);
+        list.fillTable(tabTu, false);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -700,10 +723,12 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JPanel Plant;
     private javax.swing.JTextField Pos;
     private javax.swing.JTextField i;
+    private javax.swing.JTextField idTu;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -738,19 +763,18 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField m;
     private javax.swing.JTextField n;
+    private javax.swing.JTextField naTu;
     private javax.swing.JSpinner s;
     private javax.swing.JPanel setPage1;
     private javax.swing.JPanel setPage2;
     private javax.swing.JPanel setPage3;
     private javax.swing.JPanel setPage4;
     private javax.swing.JPanel setPage5;
+    private javax.swing.JTable tabIn;
+    private javax.swing.JTable tabTu;
     private javax.swing.JSpinner w;
     // End of variables declaration//GEN-END:variables
 }
