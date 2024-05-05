@@ -24,7 +24,7 @@ public class list {
     }
 
     public list() {
-        fChild =null;
+        fChild = null;
         fTutor = null;
     }
 
@@ -272,21 +272,13 @@ public class list {
             JTextField m,
             JComboBox tn) {
         Child info = CreateChild(i, n, s, w, m, search(tn.getSelectedItem().toString()));
-        if(fChild==null) {
+        if (isEmpty()) {
             fChild = info;
-        } else if (fChild.next != null) {
-            Nodo ne = fChild.next;
-            Nodo oCab = fChild;
+        } else {
+            Child Oc = fChild;
             fChild = info;
-            ne.prev = oCab;
-            fChild.next = oCab;
-            oCab.prev = fChild;
-            oCab.next = ne;
-        }else{
-            Child oCab = (Child) fChild;
-            fChild.next = oCab;
-            fChild = info;
-            oCab.prev= fChild;
+            fChild.next = Oc;
+            Oc.prev = fChild;
         }
     }
 
