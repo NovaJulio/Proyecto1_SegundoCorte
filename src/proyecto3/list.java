@@ -224,19 +224,17 @@ public class list {
         } else {
             Child ult = (Child) getEnd(p);
             ult.next = info;
-
-            info.prev = getEnd(p);
+            info.prev = ult;
         }
         System.out.println("" + info.name);
     }
 
     public Child getPos(int b) {
-        int i = 1;
+
         Child n = fChild;
 
-        while (i > b) {
+        while (b !=n.pos()) {
             n = (Child) n.next;
-            i++;
         }
         return n;
     }
@@ -250,17 +248,27 @@ public class list {
             JTextField m,
             int bpos
     ) {
-        Nodo p = fChild;
-        Nodo info = CreateChild(i, n, s, w, m, search(tn.getSelectedItem().toString()));
-        if (p == null) {
-            p = info;
-        } else {
-            Nodo sh = getPos(bpos);
-            Nodo g = sh.prev;
-            info.prev = g;
-            info.next = sh;
-            g.next = info;
-            sh.prev = info;
+        Child info = CreateChild(i, n, s, w, m, search(tn.getSelectedItem().toString()));
+        Child sh = getPos(bpos);
+        Child g =(Child) sh.next;
+        if (isEmpty()) {
+            fChild = info;
+        } else if(sh==fChild&&g==null){
+            fChild.next=info;
+            info.prev=fChild;
+        }else if (sh==fChild&&g!=null){
+            fChild.next=info;
+            g.prev=info;
+            info.next = g;
+            info.prev = fChild;
+        }else if (sh == getEnd(fChild)){
+            sh.next = info;
+            info.prev = sh;
+        }else{
+            sh.next = info;
+            g.prev= info;
+            info.prev=sh;
+            info.next=g;
         }
     }
 

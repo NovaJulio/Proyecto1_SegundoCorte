@@ -8,6 +8,7 @@ public class Child extends Nodo{
     String id;
     String Municipio;
 
+
     public Child(int size, float weight, Tutor Acudiente, String name, String id, String Municipio) {
         this.size = size;
         this.weight = weight;
