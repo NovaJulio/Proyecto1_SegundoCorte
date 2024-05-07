@@ -135,6 +135,7 @@ public class list {
             JSpinner s,
             JSpinner w,
             JTextField m,
+            JSlider l, 
             Tutor a) {
         Child buscar = null;
         try {
@@ -147,7 +148,7 @@ public class list {
                 i.requestFocus();
                 return null;
             } else {
-                Child info = new Child((Integer) s.getValue(), (Float) w.getValue(), a, n.getText(), i.getText(), m.getText());
+                Child info = new Child((Integer) s.getValue(), (Float) w.getValue(), a, n.getText(), i.getText(), m.getText(), l.getValue());
                 System.out.println("True");
                 return info;
             }
@@ -214,10 +215,11 @@ public class list {
             JSpinner s,
             JSpinner w,
             JTextField m,
+            JSlider l,
             JComboBox tn
     ) {
         Child p = fChild;
-        Child info = CreateChild(i, n, s, w, m, search(Integer.parseInt(tn.getSelectedItem().toString())));
+        Child info = CreateChild(i, n, s, w, m, l, search(Integer.parseInt(tn.getSelectedItem().toString())));
         if (p == null) {
             fChild = info;
         } else {
@@ -245,9 +247,10 @@ public class list {
             JSpinner w,
             JComboBox tn,
             JTextField m,
+            JSlider l,
             int bpos
     ) {
-        Child info = CreateChild(i, n, s, w, m, search(Integer.parseInt(tn.getSelectedItem().toString())));
+        Child info = CreateChild(i, n, s, w, m, l, search(Integer.parseInt(tn.getSelectedItem().toString())));
         Child sh = getPos(bpos);
         Child g = (Child) sh.next;
         if (isEmpty()) {
@@ -277,8 +280,9 @@ public class list {
             JSpinner s,
             JSpinner w,
             JTextField m,
+            JSlider l,
             JComboBox tn) {
-        Child info = CreateChild(i, n, s, w, m, search(Integer.parseInt(tn.getSelectedItem().toString())));
+        Child info = CreateChild(i, n, s, w, m, l, search(Integer.parseInt(tn.getSelectedItem().toString())));
         if (isEmpty()) {
             fChild = info;
         } else {
@@ -450,11 +454,12 @@ public class list {
     public void rowCreator(DefaultTableModel t, int fila, Child n) {
         t.setValueAt(n.id, fila, 0);
         t.setValueAt(n.name, fila, 1);
-        t.setValueAt(n.Tutor.id, fila, 2);
-        t.setValueAt(n.Tutor.name, fila, 3);
-        t.setValueAt(n.weight, fila, 4);
-        t.setValueAt(n.size, fila, 5);
-        t.setValueAt(n.Municipio, fila, 6);
+        t.setValueAt(n.Age, fila, 2);
+        t.setValueAt(n.Tutor.id, fila, 3);
+        t.setValueAt(n.Tutor.name, fila, 4);
+        t.setValueAt(n.weight, fila, 5);
+        t.setValueAt(n.size, fila, 6);
+        t.setValueAt(n.Municipio, fila, 7);
     }
 
     public void rowCreator(DefaultTableModel t, int fila, Tutor n) {
@@ -469,7 +474,8 @@ public class list {
             if (isEmpty()) {
                 m.addColumn("Registro civil");
                 m.addColumn("Nombre");
-                m.addColumn("Identificacion del tutor");
+                m.addColumn("Edad");
+                m.addColumn("Id del tutor");
                 m.addColumn("Nombre del tutor");
                 m.addColumn("Peso");
                 m.addColumn("Estatura");
@@ -480,13 +486,14 @@ public class list {
             Child p = fChild;
             m.addColumn("Registro civil");
             m.addColumn("Nombre");
-            m.addColumn("Identificacion del tutor");
+            m.addColumn("Edad");
+            m.addColumn("Id del tutor");
             m.addColumn("Nombre del tutor");
             m.addColumn("Peso");
             m.addColumn("Estatura");
             m.addColumn("Municipio");
             while (p != null) {
-                m.addRow(new Object[]{"", "", "", "", "", "", ""});
+                m.addRow(new Object[]{"", "", "", "", "", "", "", ""});
                 rowCreator(m, i, p);
                 p = (Child) p.next;
                 i++;
