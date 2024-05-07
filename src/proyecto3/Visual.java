@@ -4,8 +4,6 @@ import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
 
 public class Visual extends javax.swing.JFrame {
-
-    int nnT = 0;
     list list = new list();
 
     public Visual() {
@@ -424,6 +422,11 @@ public class Visual extends javax.swing.JFrame {
         Page4.add(delTiu, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 120, 25));
 
         jButton6.setText("Eliminar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         Page4.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 90, -1));
 
         Plant.add(Page4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
@@ -710,20 +713,25 @@ public class Visual extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         list.addTutorToEnd(idTu, naTu);
-        nnT++;
         list.actJCBtutor(jComboBox1);
         list.fillTable(tabTu, false);
-        System.out.println(""+list.TNE(nnT).id);
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void delAcuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delAcuActionPerformed
-        if(delAcu.isSelected()){
+ 
+    }//GEN-LAST:event_delAcuActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       if(delAcu.isSelected()){
             list.DeleteTutor(delTiu.getText());
         }
         if(delCh.isSelected()){
-            list.DeleteTutor(delTiu.getText());
+            list.DeleteChild(delTiu.getText());
         }
-    }//GEN-LAST:event_delAcuActionPerformed
+        list.fillTable(tabIn,true);
+        list.fillTable(tabTu,false);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -50,7 +50,8 @@ public class list {
         } else {
             Tutor p = fTutor;
             while (p != null) {
-                if (p.id.equals(pa)) {
+                int idA = Integer.parseInt(p.id);
+                if (idA == pa) {
                     return p;
                 } else {
                     p = (Tutor) p.next;
@@ -85,7 +86,7 @@ public class list {
         jCBtutor.addItem("Acudientes");
         Tutor p = fTutor;
         while (p != null) {
-            jCBtutor.addItem(p.name);
+            jCBtutor.addItem(p.id);
             p = (Tutor) p.next;
         }
     }
@@ -197,13 +198,11 @@ public class list {
 
     public Tutor TNE(int pos) {
         Tutor p = fTutor;
-        int i = 1;
         while (p != null) {
-            if (i == pos) {
+            if (pos == p.pos()) {
                 return p;
             } else {
                 p = (Tutor) p.next;
-                i++;
             }
         }
         return null;
@@ -218,7 +217,7 @@ public class list {
             JComboBox tn
     ) {
         Child p = fChild;
-        Child info = CreateChild(i, n, s, w, m, search(tn.getSelectedItem().toString()));
+        Child info = CreateChild(i, n, s, w, m, search(Integer.parseInt(tn.getSelectedItem().toString())));
         if (p == null) {
             fChild = info;
         } else {
@@ -233,7 +232,7 @@ public class list {
 
         Child n = fChild;
 
-        while (b !=n.pos()) {
+        while (b != n.pos()) {
             n = (Child) n.next;
         }
         return n;
@@ -248,27 +247,27 @@ public class list {
             JTextField m,
             int bpos
     ) {
-        Child info = CreateChild(i, n, s, w, m, search(tn.getSelectedItem().toString()));
+        Child info = CreateChild(i, n, s, w, m, search(Integer.parseInt(tn.getSelectedItem().toString())));
         Child sh = getPos(bpos);
-        Child g =(Child) sh.next;
+        Child g = (Child) sh.next;
         if (isEmpty()) {
             fChild = info;
-        } else if(sh==fChild&&g==null){
-            fChild.next=info;
-            info.prev=fChild;
-        }else if (sh==fChild&&g!=null){
-            fChild.next=info;
-            g.prev=info;
+        } else if (sh == fChild && g == null) {
+            fChild.next = info;
+            info.prev = fChild;
+        } else if (sh == fChild && g != null) {
+            fChild.next = info;
+            g.prev = info;
             info.next = g;
             info.prev = fChild;
-        }else if (sh == getEnd(fChild)){
+        } else if (sh == getEnd(fChild)) {
             sh.next = info;
             info.prev = sh;
-        }else{
+        } else {
             sh.next = info;
-            g.prev= info;
-            info.prev=sh;
-            info.next=g;
+            g.prev = info;
+            info.prev = sh;
+            info.next = g;
         }
     }
 
@@ -279,7 +278,7 @@ public class list {
             JSpinner w,
             JTextField m,
             JComboBox tn) {
-        Child info = CreateChild(i, n, s, w, m, search(tn.getSelectedItem().toString()));
+        Child info = CreateChild(i, n, s, w, m, search(Integer.parseInt(tn.getSelectedItem().toString())));
         if (isEmpty()) {
             fChild = info;
         } else {
@@ -290,18 +289,32 @@ public class list {
         }
     }
 
-    public void searchByTutorId(String pa, JComboBox jCBChild) {
+    public void searchByTutorId(String pa, JComboBox jCBChild, JPanel a) {
         if (fChild == null) {
             JOptionPane.showMessageDialog(null, "No hay ningun niño en la lista");
         } else {
+            Tutor b = search(Integer.parseInt(pa));
             Child p = (Child) getEnd(fChild);
-            while (p != null) {
-                if (p.Tutor.id.equals(pa)) {
-                    String name = p.name;
-                    jCBChild.addItem(makeObj(name));
-                    p = (Child) p.prev;
-                } else {
-                    p = (Child) p.prev;
+            if (cant(b) == 1) {
+                while (p!=null) {
+                    if (p.Tutor.id.equals(pa)) {
+                        JOptionPane.showMessageDialog(null,"El peso del infante es: " + p.weight
+                + " y su talla: " + p.size);
+                        break;
+                    } else {
+                        p = (Child) p.prev;
+                    }
+                }
+            } else {
+                a.setVisible(true);
+                while (p != null) {
+                    if (p.Tutor.id.equals(pa)) {
+                        String Id = p.id;
+                        jCBChild.addItem(makeObj(Id));
+                        p = (Child) p.prev;
+                    } else {
+                        p = (Child) p.prev;
+                    }
                 }
             }
         }
@@ -326,8 +339,10 @@ public class list {
 
     public void DeleteChild(String i) {
         Child p = searchid(i);
-        if (p == fChild) {
+        if (p == fChild && fChild.next != null) {
             fChild = (Child) fChild.next;
+        } else if (p == fChild) {
+            fChild = null;
         } else if (getEnd(fChild) == p) {
             p.prev.next = null;
         } else {
@@ -365,7 +380,7 @@ public class list {
         Child p = fChild;
         Tutor t = fTutor;
         while (p != null) {
-            if (t.equals(i)) {
+            if (t.id.equals(i)) {
                 break;
             } else {
                 t = (Tutor) t.next;
@@ -408,10 +423,12 @@ public class list {
                             }
                         }
                     }
-                    if (t == getEnd(fTutor)) {
-                        t.prev.next = null;
-                    } else if (t == fTutor) {
+                    if (t == fTutor && fTutor.next != null) {
                         fTutor = (Tutor) fTutor.next;
+                    } else if (t == fTutor) {
+                        fTutor = null;
+                    } else if (t == getEnd(fTutor)) {
+                        t.prev.next = null;
                     } else {
                         t.prev.next = t.next;
                         t.next.prev = t.prev;
@@ -443,10 +460,21 @@ public class list {
         t.setValueAt(n.name, fila, 1);
     }
 
-    public void fillTable(JTable t, boolean ToC) {
+    public int fillTable(JTable t, boolean ToC) {
         int i = 0;
         DefaultTableModel m = new DefaultTableModel();
         if (ToC) {
+            if (isEmpty()) {
+                m.addColumn("Registro civil");
+                m.addColumn("Nombre");
+                m.addColumn("Identificacion del tutor");
+                m.addColumn("Nombre del tutor");
+                m.addColumn("Peso");
+                m.addColumn("Estatura");
+                m.addColumn("Municipio");
+                t.setModel(m);
+                return 0;
+            }
             Child p = fChild;
             m.addColumn("Registro civil");
             m.addColumn("Nombre");
@@ -462,7 +490,14 @@ public class list {
                 i++;
                 t.setModel(m);
             }
+            return 1;
         } else {
+            if (fTutor == null) {
+                m.addColumn("Identificacion");
+                m.addColumn("Nombre");
+                t.setModel(m);
+                return 0;
+            }
             Tutor p = fTutor;
             m.addColumn("Identificacion");
             m.addColumn("Nombre");
@@ -473,8 +508,10 @@ public class list {
                 i++;
                 t.setModel(m);
             }
+            return 2;
 
         }
+
     }
 
     public void txt(String dir) throws FileNotFoundException, UnsupportedEncodingException {
