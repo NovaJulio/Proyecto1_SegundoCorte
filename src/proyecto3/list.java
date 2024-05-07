@@ -306,6 +306,8 @@ public class list {
                     }
                 }
             } else {
+                jCBChild.removeAllItems();
+                jCBChild.addItem(makeObj("Infantes"));
                 a.setVisible(true);
                 while (p != null) {
                     if (p.Tutor.id.equals(pa)) {

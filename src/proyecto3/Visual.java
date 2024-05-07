@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Visual extends javax.swing.JFrame {
+
     list list = new list();
 
     public Visual() {
@@ -82,16 +83,17 @@ public class Visual extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         Plant = new javax.swing.JPanel();
+        select = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
+        seleCh = new javax.swing.JComboBox<>();
+        jLabel25 = new javax.swing.JLabel();
         Page1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        select = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
-        seleCh = new javax.swing.JComboBox<>();
-        jLabel25 = new javax.swing.JLabel();
         Page2 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -138,6 +140,8 @@ public class Visual extends javax.swing.JFrame {
         delCh = new javax.swing.JRadioButton();
         delTiu = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
         Page5 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         setPage1 = new javax.swing.JPanel();
@@ -157,29 +161,6 @@ public class Visual extends javax.swing.JFrame {
 
         Plant.setBackground(new java.awt.Color(255, 255, 255));
         Plant.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Page1.setBackground(new java.awt.Color(204, 204, 204));
-        Page1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Sistema de administracion de datos de niños bajos en peso (yo)");
-        Page1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 410, 30));
-
-        jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Julio Eliecer Nova Estrada");
-        Page1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 170, 20));
-
-        jLabel9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Jorge Eliecer Oviedo Vanegas");
-        Page1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 200, -1));
-
-        jLabel10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Programacion 2 - Proyecto 3");
-        Page1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 530, 190, -1));
 
         select.setBackground(new java.awt.Color(153, 153, 153));
         select.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -203,7 +184,30 @@ public class Visual extends javax.swing.JFrame {
         jLabel25.setText("Seleccione el infante");
         select.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, 30));
 
-        Page1.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 340, 150));
+        Plant.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 340, 150));
+
+        Page1.setBackground(new java.awt.Color(204, 204, 204));
+        Page1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Sistema de administracion de datos de niños bajos en peso (yo)");
+        Page1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 410, 30));
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Julio Eliecer Nova Estrada");
+        Page1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 170, 20));
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Jorge Eliecer Oviedo Vanegas");
+        Page1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 200, -1));
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Programacion 2 - Proyecto 3");
+        Page1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 530, 190, -1));
 
         Plant.add(Page1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
 
@@ -463,6 +467,19 @@ public class Visual extends javax.swing.JFrame {
             }
         });
         Page4.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 90, -1));
+
+        buttonGroup2.add(jRadioButton1);
+        jRadioButton1.setText("Acudiente");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+        Page4.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
+
+        buttonGroup2.add(jRadioButton2);
+        jRadioButton2.setText("Infante");
+        Page4.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, -1));
 
         Plant.add(Page4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
 
@@ -750,34 +767,52 @@ public class Visual extends javax.swing.JFrame {
         list.addTutorToEnd(idTu, naTu);
         list.actJCBtutor(jComboBox1);
         list.fillTable(tabTu, false);
-        
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void delAcuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delAcuActionPerformed
- 
+
     }//GEN-LAST:event_delAcuActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       if(delAcu.isSelected()){
+        if (delAcu.isSelected()&&delCh.isSelected()==false){
+            JOptionPane.showMessageDialog(null, "Seleccione si quiere eliminar un acudiente o un infante");
+            return;
+        }
+        if (delAcu.isSelected()) {
             list.DeleteTutor(delTiu.getText());
         }
-        if(delCh.isSelected()){
+        if (delCh.isSelected()) {
             list.DeleteChild(delTiu.getText());
         }
-        list.fillTable(tabIn,true);
-        list.fillTable(tabTu,false);
+        list.fillTable(tabIn, true);
+        list.fillTable(tabTu, false);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        
+
         JOptionPane.showMessageDialog(null, list.getDatos(seleCh.getSelectedItem().toString()));
         select.setVisible(false);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        list.searchByTutorId(jTextField8.getText(), seleCh, select);
-        
+        if (jRadioButton2.isSelected() && jRadioButton1.isSelected() == false) {
+            JOptionPane.showMessageDialog(null, "Seleccione si desea buscar por la id del tutor o del infante");
+            return;
+        }
+        if (jRadioButton1.isSelected()) {
+            list.searchByTutorId(jTextField8.getText(), seleCh, select);
+            return;
+        }
+        if (jRadioButton2.isSelected()) {
+            list.getDatos(jTextField8.getText());
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -824,6 +859,7 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JPanel Plant;
     private javax.swing.JTextField Pos;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JRadioButton delAcu;
     private javax.swing.JRadioButton delCh;
     private javax.swing.JTextField delTiu;
@@ -862,6 +898,8 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
