@@ -81,6 +81,7 @@ public class Visual extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         Plant = new javax.swing.JPanel();
         Page1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -129,6 +130,9 @@ public class Visual extends javax.swing.JFrame {
         jSeparator8 = new javax.swing.JSeparator();
         jTextField8 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        delAcu = new javax.swing.JRadioButton();
+        delCh = new javax.swing.JRadioButton();
+        delTiu = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
         Page5 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
@@ -376,35 +380,51 @@ public class Visual extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tabIn);
 
-        Page4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 770, 420));
+        Page4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 770, 390));
 
         jLabel21.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(0, 0, 0));
         jLabel21.setText("Informacion del infante:");
-        Page4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 160, -1));
+        Page4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 160, -1));
 
         jLabel22.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(0, 0, 0));
         jLabel22.setText("Buscar Id:");
-        Page4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, -1, -1));
-        Page4.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 170, 10));
+        Page4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
+        Page4.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 170, 10));
 
         jTextField8.setBackground(new java.awt.Color(204, 204, 204));
         jTextField8.setForeground(new java.awt.Color(0, 0, 0));
         jTextField8.setBorder(null);
-        Page4.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 140, 20));
+        Page4.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 140, 20));
 
         jButton1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jButton1.setText("Buscar");
-        Page4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, 100, -1));
+        Page4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 100, -1));
 
-        jButton6.setText("jButton6");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(delAcu);
+        delAcu.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        delAcu.setText("Eliminar acudiente");
+        delAcu.setBorder(null);
+        delAcu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                delAcuActionPerformed(evt);
             }
         });
-        Page4.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        Page4.add(delAcu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 25));
+
+        buttonGroup1.add(delCh);
+        delCh.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        delCh.setText("Eliminar infante");
+        delCh.setBorder(null);
+        Page4.add(delCh, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 25));
+
+        delTiu.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        delTiu.setBorder(null);
+        Page4.add(delTiu, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 120, 25));
+
+        jButton6.setText("Eliminar");
+        Page4.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 90, -1));
 
         Plant.add(Page4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 630));
 
@@ -696,9 +716,14 @@ public class Visual extends javax.swing.JFrame {
         System.out.println(""+list.TNE(nnT).id);
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-list.fillTable(tabIn, true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void delAcuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delAcuActionPerformed
+        if(delAcu.isSelected()){
+            list.DeleteTutor(delTiu.getText());
+        }
+        if(delCh.isSelected()){
+            list.DeleteTutor(delTiu.getText());
+        }
+    }//GEN-LAST:event_delAcuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -744,6 +769,10 @@ list.fillTable(tabIn, true);
     private javax.swing.JPanel Page5;
     private javax.swing.JPanel Plant;
     private javax.swing.JTextField Pos;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JRadioButton delAcu;
+    private javax.swing.JRadioButton delCh;
+    private javax.swing.JTextField delTiu;
     private javax.swing.JTextField i;
     private javax.swing.JTextField idTu;
     private javax.swing.JButton jButton1;
