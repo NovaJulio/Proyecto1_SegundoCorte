@@ -297,14 +297,16 @@ public class list {
             JSlider l,
             JComboBox tn) {
         Child info = CreateChild(i, n, s, w, m, l, search(Integer.parseInt(tn.getSelectedItem().toString())));
-        if (isEmpty()) {
+       if (info !=null){
+            if (isEmpty()) {
             fChild = info;
         } else {
-            Child Oc = fChild;
+            Child oc = fChild;
             fChild = info;
-            fChild.next = Oc;
-            Oc.prev = fChild;
+            fChild.next=oc;
+            oc.prev=fChild;
         }
+       }
     }
 
     public void searchByTutorId(String pa, JComboBox jCBChild, JPanel a) {
