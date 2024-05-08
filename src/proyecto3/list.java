@@ -134,10 +134,24 @@ public class list {
             JTextField n,
             JSpinner s,
             JSpinner w,
-            JTextField m,
-            JSlider l, 
+            JComboBox m,
+            JSlider l,
             Tutor a) {
         Child buscar = null;
+        if (m.getSelectedItem().toString().equals("Municipios")) {
+            JOptionPane.showMessageDialog(null, "Elija un municipio", "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+        if (i.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Ingrese el registro civil", "Error", JOptionPane.ERROR_MESSAGE);
+            i.requestFocus();
+            return null;
+        }
+        if (n.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Ingrese el nombre", "Error", JOptionPane.ERROR_MESSAGE);
+            n.requestFocus();
+            return null;
+        }
         try {
             buscar = searchid(i.getText());
             if (buscar != null) {
@@ -148,7 +162,7 @@ public class list {
                 i.requestFocus();
                 return null;
             } else {
-                Child info = new Child((Integer) s.getValue(), (Float) w.getValue(), a, n.getText(), i.getText(), m.getText(), l.getValue());
+                Child info = new Child((Integer) s.getValue(), (Float) w.getValue(), a, n.getText(), i.getText(), m.getSelectedItem().toString(), l.getValue());
                 System.out.println("True");
                 return info;
             }
@@ -214,7 +228,7 @@ public class list {
             JTextField n,
             JSpinner s,
             JSpinner w,
-            JTextField m,
+            JComboBox m,
             JSlider l,
             JComboBox tn
     ) {
@@ -246,7 +260,7 @@ public class list {
             JSpinner s,
             JSpinner w,
             JComboBox tn,
-            JTextField m,
+            JComboBox m,
             JSlider l,
             int bpos
     ) {
@@ -279,7 +293,7 @@ public class list {
             JTextField n,
             JSpinner s,
             JSpinner w,
-            JTextField m,
+            JComboBox m,
             JSlider l,
             JComboBox tn) {
         Child info = CreateChild(i, n, s, w, m, l, search(Integer.parseInt(tn.getSelectedItem().toString())));
@@ -300,10 +314,10 @@ public class list {
             Tutor b = search(Integer.parseInt(pa));
             Child p = (Child) getEnd(fChild);
             if (cant(b) == 1) {
-                while (p!=null) {
+                while (p != null) {
                     if (p.Tutor.id.equals(pa)) {
-                        JOptionPane.showMessageDialog(null,"El peso del infante es: " + p.weight
-                + " y su talla: " + p.size);
+                        JOptionPane.showMessageDialog(null, "El peso del infante es: " + p.weight
+                                + " y su talla: " + p.size);
                         break;
                     } else {
                         p = (Child) p.prev;
@@ -550,4 +564,34 @@ public class list {
         }
 
     }
+
+    public int lowSizeByCity(String m) {
+        Child p = fChild;
+        int c = 0;
+        while (p != null) {
+            if (4 <= p.Age && p.Age <= 6 && p.size < 100 && p.Municipio.equals(m)) {
+                c++;
+            }
+            p = (Child) p.next;
+        }
+        return c;
+    }
+
+    public void reportLowWeight(String m, JTextArea o) {
+        Child p = fChild;
+        int c = 0;
+        o.append("Informacion de los infantes de " + m + ":\n");
+        while (p != null) {
+            if (p.Age >= 2 && p.Age <= 3 && p.weight <= 15 && p.Municipio.equals(m)) {
+                o.append("Identificacion: " + p.id + "\n");
+                o.append("Nombre: " + p.name + "\n");
+                o.append("Tutor: " + p.Tutor.name + "\n");
+                o.append("Municipio: " + p.Municipio + "\n");
+                o.append("Peso: " + p.weight + "\n\n");
+                c++;
+            }
+            o.append("Son un total de:" + c + "en el municipio\n\n");
+        }
+    }
+
 }
