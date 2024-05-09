@@ -1,6 +1,10 @@
 package proyecto3;
 
 import java.awt.Color;
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,6 +25,7 @@ public class Visual extends javax.swing.JFrame {
         Page4.setVisible(false);
         Page5.setVisible(false);
         select.setVisible(false);
+
     }
 
     public void setPage1true() {
@@ -147,6 +152,8 @@ public class Visual extends javax.swing.JFrame {
         lowSize = new javax.swing.JButton();
         LowWeight = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
         select = new javax.swing.JPanel();
         jButton7 = new javax.swing.JButton();
         seleCh = new javax.swing.JComboBox<>();
@@ -521,6 +528,22 @@ public class Visual extends javax.swing.JFrame {
         jLabel23.setText("Mostrar reporte de:");
         Page5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 130, -1));
 
+        jButton8.setLabel("Todos los niños");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        Page5.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 170, 30));
+
+        jButton9.setLabel("Exportar informe");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        Page5.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 50, 150, 30));
+
         Plant.add(Page5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 940, 630));
 
         select.setBackground(new java.awt.Color(153, 153, 153));
@@ -859,8 +882,8 @@ public class Visual extends javax.swing.JFrame {
 
     private void lowSizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lowSizeActionPerformed
         AReport.setText("En el municipio de Monteria hay: " + list.lowSizeByCity("Monteria") + " bajos en estatura\n"
-        + "En el municipio de Sahagún hay: " + list.lowSizeByCity("Sahagún") + " bajos en estatura\n"
-        + "En el municipio de Lorica hay: " + list.lowSizeByCity("Lorica") + " bajos en estatura\n" );
+                + "En el municipio de Sahagún hay: " + list.lowSizeByCity("Sahagún") + " bajos en estatura\n"
+                + "En el municipio de Lorica hay: " + list.lowSizeByCity("Lorica") + " bajos en estatura\n");
     }//GEN-LAST:event_lowSizeActionPerformed
 
     private void LowWeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LowWeightActionPerformed
@@ -869,6 +892,26 @@ public class Visual extends javax.swing.JFrame {
         list.reportLowWeight("Sahagún", AReport);
         list.reportLowWeight("Lorica", AReport);
     }//GEN-LAST:event_LowWeightActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        AReport.setText("");
+        list.reportAll("Monteria", AReport);
+        list.reportAll("Sahagún", AReport);
+        list.reportAll("Lorica", AReport);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        System.out.println(System.getProperty("user.home"));
+        try {
+            list.txt();
+            JOptionPane.showMessageDialog(null, "Archivo creado en el directorio: "+System.getProperty("user.home")+ "\\Documents\\");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Visual.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(Visual.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -931,6 +974,8 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -13,6 +15,7 @@ public class list {
 
     Child fChild;
     Tutor fTutor;
+    long fA = System.currentTimeMillis();
 
     private Object makeObj(final String item) {
         return new Object() {
@@ -543,10 +546,11 @@ public class list {
 
     }
 
-    public void txt(String dir) throws FileNotFoundException, UnsupportedEncodingException {
+    public void txt() throws FileNotFoundException, UnsupportedEncodingException {
         Child p = fChild;
         Tutor t = fTutor;
-        String ruta = dir + "archivo.txt";
+        String user = System.getProperty("user.home");
+        String ruta = user + "\\Documents\\Registro"+fA+".txt";
 
         File file = new File(ruta);
         try {
@@ -554,19 +558,33 @@ public class list {
         } catch (IOException e) {
 
         }
-        while (p != null) {
-            PrintWriter writer = new PrintWriter(ruta, "UTF-8");
+        try (PrintWriter writer = new PrintWriter(ruta, "UTF-8")) {
             if (isEmpty()) {
                 writer.println("No Hay Nada En La Lista");
+                return;
             }
+            writer.println("Registro de infantes: ");
             int i = 1;
             while (p != null) {
-
-                writer.println(i);
-                i++;
+                writer.println("Infante N°"+i+"{");
+                writer.println("Registro civil: " + p.id);
+                writer.println("Nombre: " + p.name);
+                writer.println("Edad: " + p.Age);
+                writer.println("Altura: " + p.size);
+                writer.println("Peso: " + p.weight);
+                writer.println("Id del acudiente: " + p.Tutor.id);
+                writer.println("Nombre del acudiente" + p.Tutor.name);
+                writer.println("Municipio: " + p.Municipio + "}\n");
                 p = (Child) p.next;
+                i++;
             }
-            writer.close();
+            writer.println("\nRegistro de acudientes");
+            while (t != null) {
+                writer.println("Identificacion: " + t.id);
+                writer.println("Nombre: " + t.name);
+                writer.println("Tiene " + cant(t) + " infantes vinculados\n");
+                t = (Tutor) t.next;
+            }
         }
 
     }
@@ -589,16 +607,38 @@ public class list {
         o.append("Informacion de los infantes de " + m + ":\n");
         while (p != null) {
             if (p.Age >= 2 && p.Age <= 3 && p.weight <= 15 && p.Municipio.equals(m)) {
-                o.append("Identificacion: " + p.id + "\n");
+                o.append("Registro civil: " + p.id + "\n");
                 o.append("Nombre: " + p.name + "\n");
                 o.append("Tutor: " + p.Tutor.name + "\n");
                 o.append("Municipio: " + p.Municipio + "\n");
                 o.append("Peso: " + p.weight + "\n\n");
                 c++;
             }
-            p= (Child)p.next;
+            p = (Child) p.next;
         }
-        o.append("Son un total de:" + c + "en el municipio\n\n");
+        o.append("Son un total de: " + c + " en el municipio\n\n");
+    }
+
+    public void reportAll(String m, JTextArea o) {
+        Child p = fChild;
+        int c = 0;
+        o.append("Informacion de los infantes de " + m + ":\n");
+        while (p != null) {
+            if (p.Municipio.equals(m)) {
+                c++;
+                o.append("Registro civil: " + p.id + "\n");
+                o.append("Nombre: " + p.name + "\n");
+                o.append("Edad: " + p.Age + "\n");
+                o.append("Altura: " + p.size + "\n");
+                o.append("Peso: " + p.weight + "\n");
+                o.append("Id del acudiente: " + p.Tutor.id + "\n");
+                o.append("Nombre del acudiente" + p.Tutor.name + "\n");
+                o.append("Municipio: " + p.Municipio + "\n\n");
+
+            }
+            p = (Child) p.next;
+        }
+        o.append("Son un total de: " + c + " en el municipio\n\n");
     }
 
 }
