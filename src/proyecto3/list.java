@@ -234,14 +234,16 @@ public class list {
     ) {
         Child p = fChild;
         Child info = CreateChild(i, n, s, w, m, l, search(Integer.parseInt(tn.getSelectedItem().toString())));
-        if (p == null) {
-            fChild = info;
-        } else {
-            Child ult = (Child) getEnd(p);
-            ult.next = info;
-            info.prev = ult;
+        if (info != null) {
+            if (p == null) {
+                fChild = info;
+            } else {
+                Child ult = (Child) getEnd(p);
+                ult.next = info;
+                info.prev = ult;
+            }
+            System.out.println("" + info.name);
         }
-        System.out.println("" + info.name);
     }
 
     public Child getPos(int b) {
@@ -267,24 +269,26 @@ public class list {
         Child info = CreateChild(i, n, s, w, m, l, search(Integer.parseInt(tn.getSelectedItem().toString())));
         Child sh = getPos(bpos);
         Child g = (Child) sh.next;
-        if (isEmpty()) {
-            fChild = info;
-        } else if (sh == fChild && g == null) {
-            fChild.next = info;
-            info.prev = fChild;
-        } else if (sh == fChild && g != null) {
-            fChild.next = info;
-            g.prev = info;
-            info.next = g;
-            info.prev = fChild;
-        } else if (sh == getEnd(fChild)) {
-            sh.next = info;
-            info.prev = sh;
-        } else {
-            sh.next = info;
-            g.prev = info;
-            info.prev = sh;
-            info.next = g;
+        if (info != null) {
+            if (isEmpty()) {
+                fChild = info;
+            } else if (sh == fChild && g == null) {
+                fChild.next = info;
+                info.prev = fChild;
+            } else if (sh == fChild && g != null) {
+                fChild.next = info;
+                g.prev = info;
+                info.next = g;
+                info.prev = fChild;
+            } else if (sh == getEnd(fChild)) {
+                sh.next = info;
+                info.prev = sh;
+            } else {
+                sh.next = info;
+                g.prev = info;
+                info.prev = sh;
+                info.next = g;
+            }
         }
     }
 
@@ -297,16 +301,16 @@ public class list {
             JSlider l,
             JComboBox tn) {
         Child info = CreateChild(i, n, s, w, m, l, search(Integer.parseInt(tn.getSelectedItem().toString())));
-       if (info !=null){
+        if (info != null) {
             if (isEmpty()) {
-            fChild = info;
-        } else {
-            Child oc = fChild;
-            fChild = info;
-            fChild.next=oc;
-            oc.prev=fChild;
+                fChild = info;
+            } else {
+                Child oc = fChild;
+                fChild = info;
+                fChild.next = oc;
+                oc.prev = fChild;
+            }
         }
-       }
     }
 
     public void searchByTutorId(String pa, JComboBox jCBChild, JPanel a) {
@@ -592,8 +596,9 @@ public class list {
                 o.append("Peso: " + p.weight + "\n\n");
                 c++;
             }
-            o.append("Son un total de:" + c + "en el municipio\n\n");
+            p= (Child)p.next;
         }
+        o.append("Son un total de:" + c + "en el municipio\n\n");
     }
 
 }

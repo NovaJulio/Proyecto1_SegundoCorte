@@ -492,13 +492,13 @@ public class Visual extends javax.swing.JFrame {
 
         jLabel28.setForeground(new java.awt.Color(0, 0, 0));
         jLabel28.setText("Reporte:");
-        Page5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        Page5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         AReport.setColumns(20);
         AReport.setRows(5);
         jScrollPane3.setViewportView(AReport);
 
-        Page5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 750, 440));
+        Page5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 750, 440));
 
         lowSize.setText("Niños bajos en estatura");
         lowSize.addActionListener(new java.awt.event.ActionListener() {
