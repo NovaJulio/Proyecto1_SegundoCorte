@@ -155,6 +155,10 @@ public class list {
             n.requestFocus();
             return null;
         }
+        if (a == null) {
+            JOptionPane.showMessageDialog(null, "Elija un tutor valido", "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
         try {
             buscar = searchid(i.getText());
             if (buscar != null) {
@@ -303,7 +307,7 @@ public class list {
             JComboBox m,
             JSlider l,
             JComboBox tn) {
-        Child info = CreateChild(i, n, s, w, m, l, search(Integer.parseInt(tn.getSelectedItem().toString())));
+        Child info = CreateChild(i, n, s, w, m, l, search(tn.getSelectedItem().toString()));
         if (info != null) {
             if (isEmpty()) {
                 fChild = info;
@@ -550,7 +554,7 @@ public class list {
         Child p = fChild;
         Tutor t = fTutor;
         String user = System.getProperty("user.home");
-        String ruta = user + "\\Documents\\Registro"+fA+".txt";
+        String ruta = user + "\\Documents\\Registro" + fA + ".txt";
 
         File file = new File(ruta);
         try {
@@ -566,7 +570,7 @@ public class list {
             writer.println("Registro de infantes: ");
             int i = 1;
             while (p != null) {
-                writer.println("Infante N°"+i+"{");
+                writer.println("Infante N°" + i + "{");
                 writer.println("Registro civil: " + p.id);
                 writer.println("Nombre: " + p.name);
                 writer.println("Edad: " + p.Age);
