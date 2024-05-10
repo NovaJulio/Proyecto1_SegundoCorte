@@ -307,7 +307,15 @@ public class list {
             JComboBox m,
             JSlider l,
             JComboBox tn) {
-        Child info = CreateChild(i, n, s, w, m, l, search(tn.getSelectedItem().toString()));
+        int t = 0;
+
+        try {
+            t = Integer.parseInt(tn.getSelectedItem().toString());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Seleccione un acudiente valido");
+            return;
+        }
+        Child info = CreateChild(i, n, s, w, m, l, search(t));
         if (info != null) {
             if (isEmpty()) {
                 fChild = info;
