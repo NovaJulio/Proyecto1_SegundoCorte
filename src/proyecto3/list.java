@@ -155,10 +155,6 @@ public class list {
             n.requestFocus();
             return null;
         }
-        if (a == null) {
-            JOptionPane.showMessageDialog(null, "Elija un tutor valido", "Error", JOptionPane.ERROR_MESSAGE);
-            return null;
-        }
         try {
             buscar = searchid(i.getText());
             if (buscar != null) {
@@ -239,8 +235,15 @@ public class list {
             JSlider l,
             JComboBox tn
     ) {
+        int t = 0;
+        try {
+            t = Integer.parseInt(tn.getSelectedItem().toString());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Seleccione un acudiente valido");
+            return;
+        }
         Child p = fChild;
-        Child info = CreateChild(i, n, s, w, m, l, search(Integer.parseInt(tn.getSelectedItem().toString())));
+        Child info = CreateChild(i, n, s, w, m, l, search(t));
         if (info != null) {
             if (p == null) {
                 fChild = info;
@@ -273,7 +276,14 @@ public class list {
             JSlider l,
             int bpos
     ) {
-        Child info = CreateChild(i, n, s, w, m, l, search(Integer.parseInt(tn.getSelectedItem().toString())));
+        int t = 0;
+        try {
+            t = Integer.parseInt(tn.getSelectedItem().toString());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Seleccione un acudiente valido");
+            return;
+        }
+        Child info = CreateChild(i, n, s, w, m, l, search(t));
         Child sh = getPos(bpos);
         Child g = (Child) sh.next;
         if (info != null) {
