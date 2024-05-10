@@ -113,6 +113,16 @@ public class list {
             JTextField i,
             JTextField n) {
         Tutor search = null;
+        if (i.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Ingrese el registro civil", "Error", JOptionPane.ERROR_MESSAGE);
+            i.requestFocus();
+            return null;
+        }
+        if (n.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Ingrese el nombre", "Error", JOptionPane.ERROR_MESSAGE);
+            n.requestFocus();
+            return null;
+        }
         try {
             search = search(Integer.parseInt(i.getText()));
             if (search != null) {
@@ -205,12 +215,17 @@ public class list {
     ) {
         Nodo p = fTutor;
         Nodo info = CreateTutor(i, n);
-        if (p == null) {
-            fTutor = (Tutor) info;
-        } else {
-            Tutor ult = getEndTutor();
-            ult.next = info;
-            info.prev = ult;
+        if (info != null) {
+            if (p == null) {
+                fTutor = (Tutor) info;
+            } else {
+                Tutor ult = getEndTutor();
+                ult.next = info;
+                info.prev = ult;
+            }
+            i.setText("");
+            n.setText("");
+            i.requestFocus();
         }
     }
 
@@ -253,6 +268,14 @@ public class list {
                 info.prev = ult;
             }
             System.out.println("" + info.name);
+            i.setText("");
+            n.setText("");
+            l.setValue(1);
+            s.setValue(100);
+            w.setValue(30);
+            tn.setSelectedIndex(0);
+            m.setSelectedIndex(0);
+            i.grabFocus();
         }
     }
 
@@ -306,6 +329,14 @@ public class list {
                 info.prev = sh;
                 info.next = g;
             }
+            i.setText("");
+            n.setText("");
+            l.setValue(1);
+            s.setValue(100);
+            w.setValue(30);
+            tn.setSelectedIndex(0);
+            m.setSelectedIndex(0);
+            i.grabFocus();
         }
     }
 
@@ -335,6 +366,14 @@ public class list {
                 fChild.next = oc;
                 oc.prev = fChild;
             }
+            i.setText("");
+            n.setText("");
+            l.setValue(1);
+            s.setValue(100);
+            w.setValue(30);
+            tn.setSelectedIndex(0);
+            m.setSelectedIndex(0);
+            i.grabFocus();
         }
     }
 

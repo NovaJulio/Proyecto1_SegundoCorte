@@ -776,6 +776,7 @@ public class Visual extends javax.swing.JFrame {
         setPage3.setBackground(new Color(153, 153, 153));
         setPage4.setBackground(new Color(153, 153, 153));
         setPage5.setBackground(new Color(153, 153, 153));
+        idTu.grabFocus();
     }//GEN-LAST:event_setPage2MouseClicked
 
     private void setPage3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setPage3MouseClicked
@@ -789,6 +790,7 @@ public class Visual extends javax.swing.JFrame {
         setPage2.setBackground(new Color(153, 153, 153));
         setPage4.setBackground(new Color(153, 153, 153));
         setPage5.setBackground(new Color(153, 153, 153));
+        i.grabFocus();
     }//GEN-LAST:event_setPage3MouseClicked
 
     private void setPage4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setPage4MouseClicked
@@ -836,7 +838,6 @@ public class Visual extends javax.swing.JFrame {
         list.addTutorToEnd(idTu, naTu);
         list.actJCBtutor(jComboBox1);
         list.fillTable(tabTu, false);
-
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void delAcuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delAcuActionPerformed
