@@ -377,9 +377,15 @@ public class Visual extends javax.swing.JFrame {
         jLabel26.setText("Edad:");
         Page3.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, -1, -1));
 
+        a.setBackground(new java.awt.Color(204, 204, 204));
+        a.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        a.setForeground(new java.awt.Color(0, 0, 0));
+        a.setMajorTickSpacing(1);
         a.setMaximum(6);
         a.setMinimum(1);
+        a.setMinorTickSpacing(1);
         a.setPaintTicks(true);
+        a.setValue(1);
         a.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 aStateChanged(evt);
@@ -389,6 +395,7 @@ public class Visual extends javax.swing.JFrame {
 
         jLabel27.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel27.setText("1");
         Page3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 100, 50, 20));
 
         m.setBackground(new java.awt.Color(204, 204, 204));
