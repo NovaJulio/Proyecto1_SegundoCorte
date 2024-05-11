@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -13,6 +15,7 @@ public class list {
 
     Child fChild;
     Tutor fTutor;
+    long fA = System.currentTimeMillis();
 
     private Object makeObj(final String item) {
         return new Object() {
@@ -110,6 +113,16 @@ public class list {
             JTextField i,
             JTextField n) {
         Tutor search = null;
+        if (i.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Ingrese la identificacion", "Error", JOptionPane.ERROR_MESSAGE);
+            i.requestFocus();
+            return null;
+        }
+        if (n.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Ingrese el nombre", "Error", JOptionPane.ERROR_MESSAGE);
+            n.requestFocus();
+            return null;
+        }
         try {
             search = search(Integer.parseInt(i.getText()));
             if (search != null) {
@@ -134,9 +147,24 @@ public class list {
             JTextField n,
             JSpinner s,
             JSpinner w,
-            JTextField m,
+            JComboBox m,
+            JSlider l,
             Tutor a) {
         Child buscar = null;
+        if (m.getSelectedItem().toString().equals("Municipios")) {
+            JOptionPane.showMessageDialog(null, "Elija un municipio", "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+        if (i.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Ingrese el registro civil", "Error", JOptionPane.ERROR_MESSAGE);
+            i.requestFocus();
+            return null;
+        }
+        if (n.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Ingrese el nombre", "Error", JOptionPane.ERROR_MESSAGE);
+            n.requestFocus();
+            return null;
+        }
         try {
             buscar = searchid(i.getText());
             if (buscar != null) {
@@ -147,7 +175,7 @@ public class list {
                 i.requestFocus();
                 return null;
             } else {
-                Child info = new Child((Integer) s.getValue(), (Float) w.getValue(), a, n.getText(), i.getText(), m.getText());
+                Child info = new Child((Integer) s.getValue(), (Float) w.getValue(), a, n.getText(), i.getText(), m.getSelectedItem().toString(), l.getValue());
                 System.out.println("True");
                 return info;
             }
@@ -187,12 +215,17 @@ public class list {
     ) {
         Nodo p = fTutor;
         Nodo info = CreateTutor(i, n);
-        if (p == null) {
-            fTutor = (Tutor) info;
-        } else {
-            Tutor ult = getEndTutor();
-            ult.next = info;
-            info.prev = ult;
+        if (info != null) {
+            if (p == null) {
+                fTutor = (Tutor) info;
+            } else {
+                Tutor ult = getEndTutor();
+                ult.next = info;
+                info.prev = ult;
+            }
+            i.setText("");
+            n.setText("");
+            i.requestFocus();
         }
     }
 
@@ -213,19 +246,37 @@ public class list {
             JTextField n,
             JSpinner s,
             JSpinner w,
-            JTextField m,
+            JComboBox m,
+            JSlider l,
             JComboBox tn
     ) {
-        Child p = fChild;
-        Child info = CreateChild(i, n, s, w, m, search(Integer.parseInt(tn.getSelectedItem().toString())));
-        if (p == null) {
-            fChild = info;
-        } else {
-            Child ult = (Child) getEnd(p);
-            ult.next = info;
-            info.prev = ult;
+        int t = 0;
+        try {
+            t = Integer.parseInt(tn.getSelectedItem().toString());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Seleccione un acudiente valido");
+            return;
         }
-        System.out.println("" + info.name);
+        Child p = fChild;
+        Child info = CreateChild(i, n, s, w, m, l, search(t));
+        if (info != null) {
+            if (p == null) {
+                fChild = info;
+            } else {
+                Child ult = (Child) getEnd(p);
+                ult.next = info;
+                info.prev = ult;
+            }
+            System.out.println("" + info.name);
+            i.setText("");
+            n.setText("");
+            l.setValue(1);
+            s.setValue(100);
+            w.setValue(30);
+            tn.setSelectedIndex(0);
+            m.setSelectedIndex(0);
+            i.grabFocus();
+        }
     }
 
     public Child getPos(int b) {
@@ -244,30 +295,48 @@ public class list {
             JSpinner s,
             JSpinner w,
             JComboBox tn,
-            JTextField m,
+            JComboBox m,
+            JSlider l,
             int bpos
     ) {
-        Child info = CreateChild(i, n, s, w, m, search(Integer.parseInt(tn.getSelectedItem().toString())));
+        int t = 0;
+        try {
+            t = Integer.parseInt(tn.getSelectedItem().toString());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Seleccione un acudiente valido");
+            return;
+        }
+        Child info = CreateChild(i, n, s, w, m, l, search(t));
         Child sh = getPos(bpos);
         Child g = (Child) sh.next;
-        if (isEmpty()) {
-            fChild = info;
-        } else if (sh == fChild && g == null) {
-            fChild.next = info;
-            info.prev = fChild;
-        } else if (sh == fChild && g != null) {
-            fChild.next = info;
-            g.prev = info;
-            info.next = g;
-            info.prev = fChild;
-        } else if (sh == getEnd(fChild)) {
-            sh.next = info;
-            info.prev = sh;
-        } else {
-            sh.next = info;
-            g.prev = info;
-            info.prev = sh;
-            info.next = g;
+        if (info != null) {
+            if (isEmpty()) {
+                fChild = info;
+            } else if (sh == fChild && g == null) {
+                fChild.next = info;
+                info.prev = fChild;
+            } else if (sh == fChild && g != null) {
+                fChild.next = info;
+                g.prev = info;
+                info.next = g;
+                info.prev = fChild;
+            } else if (sh == getEnd(fChild)) {
+                sh.next = info;
+                info.prev = sh;
+            } else {
+                sh.next = info;
+                g.prev = info;
+                info.prev = sh;
+                info.next = g;
+            }
+            i.setText("");
+            n.setText("");
+            l.setValue(1);
+            s.setValue(100);
+            w.setValue(30);
+            tn.setSelectedIndex(0);
+            m.setSelectedIndex(0);
+            i.grabFocus();
         }
     }
 
@@ -276,16 +345,35 @@ public class list {
             JTextField n,
             JSpinner s,
             JSpinner w,
-            JTextField m,
+            JComboBox m,
+            JSlider l,
             JComboBox tn) {
-        Child info = CreateChild(i, n, s, w, m, search(Integer.parseInt(tn.getSelectedItem().toString())));
-        if (isEmpty()) {
-            fChild = info;
-        } else {
-            Child Oc = fChild;
-            fChild = info;
-            fChild.next = Oc;
-            Oc.prev = fChild;
+        int t = 0;
+
+        try {
+            t = Integer.parseInt(tn.getSelectedItem().toString());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Seleccione un acudiente valido");
+            return;
+        }
+        Child info = CreateChild(i, n, s, w, m, l, search(t));
+        if (info != null) {
+            if (isEmpty()) {
+                fChild = info;
+            } else {
+                Child oc = fChild;
+                fChild = info;
+                fChild.next = oc;
+                oc.prev = fChild;
+            }
+            i.setText("");
+            n.setText("");
+            l.setValue(1);
+            s.setValue(100);
+            w.setValue(30);
+            tn.setSelectedIndex(0);
+            m.setSelectedIndex(0);
+            i.grabFocus();
         }
     }
 
@@ -296,10 +384,10 @@ public class list {
             Tutor b = search(Integer.parseInt(pa));
             Child p = (Child) getEnd(fChild);
             if (cant(b) == 1) {
-                while (p!=null) {
+                while (p != null) {
                     if (p.Tutor.id.equals(pa)) {
-                        JOptionPane.showMessageDialog(null,"El peso del infante es: " + p.weight
-                + " y su talla: " + p.size);
+                        JOptionPane.showMessageDialog(null, "El peso del infante es: " + p.weight
+                                + " y su talla: " + p.size);
                         break;
                     } else {
                         p = (Child) p.prev;
@@ -450,11 +538,12 @@ public class list {
     public void rowCreator(DefaultTableModel t, int fila, Child n) {
         t.setValueAt(n.id, fila, 0);
         t.setValueAt(n.name, fila, 1);
-        t.setValueAt(n.Tutor.id, fila, 2);
-        t.setValueAt(n.Tutor.name, fila, 3);
-        t.setValueAt(n.weight, fila, 4);
-        t.setValueAt(n.size, fila, 5);
-        t.setValueAt(n.Municipio, fila, 6);
+        t.setValueAt(n.Age, fila, 2);
+        t.setValueAt(n.Tutor.id, fila, 3);
+        t.setValueAt(n.Tutor.name, fila, 4);
+        t.setValueAt(n.weight, fila, 5);
+        t.setValueAt(n.size, fila, 6);
+        t.setValueAt(n.Municipio, fila, 7);
     }
 
     public void rowCreator(DefaultTableModel t, int fila, Tutor n) {
@@ -469,7 +558,8 @@ public class list {
             if (isEmpty()) {
                 m.addColumn("Registro civil");
                 m.addColumn("Nombre");
-                m.addColumn("Identificacion del tutor");
+                m.addColumn("Edad");
+                m.addColumn("Id del tutor");
                 m.addColumn("Nombre del tutor");
                 m.addColumn("Peso");
                 m.addColumn("Estatura");
@@ -480,13 +570,14 @@ public class list {
             Child p = fChild;
             m.addColumn("Registro civil");
             m.addColumn("Nombre");
-            m.addColumn("Identificacion del tutor");
+            m.addColumn("Edad");
+            m.addColumn("Id del tutor");
             m.addColumn("Nombre del tutor");
             m.addColumn("Peso");
             m.addColumn("Estatura");
             m.addColumn("Municipio");
             while (p != null) {
-                m.addRow(new Object[]{"", "", "", "", "", "", ""});
+                m.addRow(new Object[]{"", "", "", "", "", "", "", ""});
                 rowCreator(m, i, p);
                 p = (Child) p.next;
                 i++;
@@ -516,10 +607,11 @@ public class list {
 
     }
 
-    public void txt(String dir) throws FileNotFoundException, UnsupportedEncodingException {
+    public void txt() throws FileNotFoundException, UnsupportedEncodingException {
         Child p = fChild;
         Tutor t = fTutor;
-        String ruta = dir + "archivo.txt";
+        String user = System.getProperty("user.home");
+        String ruta = user + "\\Documents\\Registro" + fA + ".txt";
 
         File file = new File(ruta);
         try {
@@ -527,20 +619,87 @@ public class list {
         } catch (IOException e) {
 
         }
-        while (p != null) {
-            PrintWriter writer = new PrintWriter(ruta, "UTF-8");
+        try (PrintWriter writer = new PrintWriter(ruta, "UTF-8")) {
             if (isEmpty()) {
                 writer.println("No Hay Nada En La Lista");
+                return;
             }
+            writer.println("Registro de infantes: ");
             int i = 1;
             while (p != null) {
-
-                writer.println(i);
-                i++;
+                writer.println("Infante N°" + i + "{");
+                writer.println("Registro civil: " + p.id);
+                writer.println("Nombre: " + p.name);
+                writer.println("Edad: " + p.Age);
+                writer.println("Altura: " + p.size);
+                writer.println("Peso: " + p.weight);
+                writer.println("Id del acudiente: " + p.Tutor.id);
+                writer.println("Nombre del acudiente" + p.Tutor.name);
+                writer.println("Municipio: " + p.Municipio + "}\n");
                 p = (Child) p.next;
+                i++;
             }
-            writer.close();
+            writer.println("\nRegistro de acudientes");
+            while (t != null) {
+                writer.println("Identificacion: " + t.id);
+                writer.println("Nombre: " + t.name);
+                writer.println("Tiene " + cant(t) + " infantes vinculados\n");
+                t = (Tutor) t.next;
+            }
         }
 
     }
+
+    public int lowSizeByCity(String m) {
+        Child p = fChild;
+        int c = 0;
+        while (p != null) {
+            if (4 <= p.Age && p.Age <= 6 && p.size < 100 && p.Municipio.equals(m)) {
+                c++;
+            }
+            p = (Child) p.next;
+        }
+        return c;
+    }
+
+    public void reportLowWeight(String m, JTextArea o) {
+        Child p = fChild;
+        int c = 0;
+        o.append("Informacion de los infantes de " + m + ":\n");
+        while (p != null) {
+            if (p.Age >= 2 && p.Age <= 3 && p.weight <= 15 && p.Municipio.equals(m)) {
+                o.append("Registro civil: " + p.id + "\n");
+                o.append("Nombre: " + p.name + "\n");
+                o.append("Tutor: " + p.Tutor.name + "\n");
+                o.append("Municipio: " + p.Municipio + "\n");
+                o.append("Peso: " + p.weight + "\n\n");
+                c++;
+            }
+            p = (Child) p.next;
+        }
+        o.append("Son un total de: " + c + " en el municipio\n\n");
+    }
+
+    public void reportAll(String m, JTextArea o) {
+        Child p = fChild;
+        int c = 0;
+        o.append("Informacion de los infantes de " + m + ":\n");
+        while (p != null) {
+            if (p.Municipio.equals(m)) {
+                c++;
+                o.append("Registro civil: " + p.id + "\n");
+                o.append("Nombre: " + p.name + "\n");
+                o.append("Edad: " + p.Age + "\n");
+                o.append("Altura: " + p.size + "\n");
+                o.append("Peso: " + p.weight + "\n");
+                o.append("Id del acudiente: " + p.Tutor.id + "\n");
+                o.append("Nombre del acudiente" + p.Tutor.name + "\n");
+                o.append("Municipio: " + p.Municipio + "\n\n");
+
+            }
+            p = (Child) p.next;
+        }
+        o.append("Son un total de: " + c + " en el municipio\n\n");
+    }
+
 }
