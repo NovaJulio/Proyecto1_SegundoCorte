@@ -272,7 +272,7 @@ public class list {
             n.setText("");
             l.setValue(1);
             s.setValue(100);
-            w.setValue(30);
+            w.setValue((float)30);
             tn.setSelectedIndex(0);
             m.setSelectedIndex(0);
             i.grabFocus();
@@ -333,7 +333,7 @@ public class list {
             n.setText("");
             l.setValue(1);
             s.setValue(100);
-            w.setValue(30);
+            w.setValue((float)30);
             tn.setSelectedIndex(0);
             m.setSelectedIndex(0);
             i.grabFocus();
@@ -370,7 +370,7 @@ public class list {
             n.setText("");
             l.setValue(1);
             s.setValue(100);
-            w.setValue(30);
+            w.setValue((float)30);
             tn.setSelectedIndex(0);
             m.setSelectedIndex(0);
             i.grabFocus();
@@ -565,6 +565,7 @@ public class list {
                 m.addColumn("Estatura");
                 m.addColumn("Municipio");
                 t.setModel(m);
+                System.out.println("True");
                 return 0;
             }
             Child p = fChild;
@@ -602,9 +603,7 @@ public class list {
                 t.setModel(m);
             }
             return 2;
-
         }
-
     }
 
     public void txt() throws FileNotFoundException, UnsupportedEncodingException {

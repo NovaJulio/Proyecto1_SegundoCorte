@@ -845,7 +845,7 @@ public class Visual extends javax.swing.JFrame {
     }//GEN-LAST:event_delAcuActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        if (delAcu.isSelected() && delCh.isSelected() == false) {
+        if (delAcu.isSelected() == false && delCh.isSelected() == false) {
             JOptionPane.showMessageDialog(null, "Seleccione si quiere eliminar un acudiente o un infante");
             return;
         }
@@ -866,7 +866,7 @@ public class Visual extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (jRadioButton2.isSelected() && jRadioButton1.isSelected() == false) {
+        if (jRadioButton2.isSelected() == false && jRadioButton1.isSelected() == false) {
             JOptionPane.showMessageDialog(null, "Seleccione si desea buscar por la id del tutor o del infante");
             return;
         }
@@ -912,13 +912,13 @@ public class Visual extends javax.swing.JFrame {
         System.out.println(System.getProperty("user.home"));
         try {
             list.txt();
-            JOptionPane.showMessageDialog(null, "Archivo creado en el directorio: "+System.getProperty("user.home")+ "\\Documents\\");
+            JOptionPane.showMessageDialog(null, "Archivo creado en el directorio: " + System.getProperty("user.home") + "\\Documents\\");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Visual.class.getName()).log(Level.SEVERE, null, ex);
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(Visual.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
