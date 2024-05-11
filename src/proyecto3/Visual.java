@@ -845,7 +845,10 @@ public class Visual extends javax.swing.JFrame {
     }//GEN-LAST:event_delAcuActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7d245769a655de6c909eead557bee6d21fd1798b
         if (delAcu.isSelected() && delCh.isSelected() == false) {
             JOptionPane.showMessageDialog(null, "Seleccione si quiere eliminar un acudiente o un infante");
             return;
