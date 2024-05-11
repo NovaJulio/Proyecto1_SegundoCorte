@@ -272,7 +272,7 @@ public class list {
             n.setText("");
             l.setValue(1);
             s.setValue(100);
-            w.setValue((float)30);
+            w.setValue((float) 30);
             tn.setSelectedIndex(0);
             m.setSelectedIndex(0);
             i.grabFocus();
@@ -333,7 +333,7 @@ public class list {
             n.setText("");
             l.setValue(1);
             s.setValue(100);
-            w.setValue((float)30);
+            w.setValue((float) 30);
             tn.setSelectedIndex(0);
             m.setSelectedIndex(0);
             i.grabFocus();
@@ -370,7 +370,7 @@ public class list {
             n.setText("");
             l.setValue(1);
             s.setValue(100);
-            w.setValue((float)30);
+            w.setValue((float) 30);
             tn.setSelectedIndex(0);
             m.setSelectedIndex(0);
             i.grabFocus();
@@ -469,32 +469,35 @@ public class list {
     public void DeleteTutor(String i) {
         Child p = fChild;
         Tutor t = fTutor;
-        while (p != null) {
+        while (t.next != null) {
             if (t.id.equals(i)) {
                 break;
             } else {
                 t = (Tutor) t.next;
             }
         }
-        if (p == null) {
+        if (search(Integer.parseInt(i)) == null) {
             JOptionPane.showMessageDialog(null, "No se ha encontrado ningun tutor con esa id");
         } else {
-            while (p != null) {
+            while (t.next != null) {
                 if (t == p.Tutor) {
                     break;
                 } else {
                     p = (Child) p.next;
                 }
             }
-            if (p == null) {
-                if (t == getEnd(fTutor)) {
-                    t.prev.next = null;
-                } else if (t == fTutor) {
+            if (cant(t) == 0) {
+                if (t == fTutor && fTutor != null) {
                     fTutor = (Tutor) fTutor.next;
+                } else if (t == fTutor) {
+                    fTutor=null;
+                } else if (t == getEnd(fTutor)) {
+                    t.prev.next = null;
                 } else {
                     t.prev.next = t.next;
                     t.next.prev = t.prev;
                 }
+                JOptionPane.showMessageDialog(null,"Se ha eliminado el acudiente");
             } else {
                 int option = JOptionPane.showOptionDialog(null, "Este tutor tiene:"
                         + " " + cant(t) + "\nal eliminarlo estos se eliminaran tambien\n"
