@@ -114,7 +114,7 @@ public class list {
             JTextField n) {
         Tutor search = null;
         if (i.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Ingrese el registro civil", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Ingrese la identificacion", "Error", JOptionPane.ERROR_MESSAGE);
             i.requestFocus();
             return null;
         }
