@@ -90,6 +90,10 @@ public class Visual extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         Plant = new javax.swing.JPanel();
+        select = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
+        seleCh = new javax.swing.JComboBox<>();
+        jLabel25 = new javax.swing.JLabel();
         Page1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -154,10 +158,6 @@ public class Visual extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        select = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
-        seleCh = new javax.swing.JComboBox<>();
-        jLabel25 = new javax.swing.JLabel();
         setPage1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         setPage2 = new javax.swing.JPanel();
@@ -175,6 +175,30 @@ public class Visual extends javax.swing.JFrame {
 
         Plant.setBackground(new java.awt.Color(255, 255, 255));
         Plant.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        select.setBackground(new java.awt.Color(153, 153, 153));
+        select.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jButton7.setText("Mostrar");
+        jButton7.setBorder(null);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        select.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 60, 30));
+
+        seleCh.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        seleCh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Infantes" }));
+        seleCh.setBorder(null);
+        select.add(seleCh, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 170, 30));
+
+        jLabel25.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel25.setText("Seleccione el infante");
+        select.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, 30));
+
+        Plant.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 340, 150));
 
         Page1.setBackground(new java.awt.Color(204, 204, 204));
         Page1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -552,30 +576,6 @@ public class Visual extends javax.swing.JFrame {
         Page5.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 50, 150, 30));
 
         Plant.add(Page5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 940, 630));
-
-        select.setBackground(new java.awt.Color(153, 153, 153));
-        select.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jButton7.setText("Mostrar");
-        jButton7.setBorder(null);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        select.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 60, 30));
-
-        seleCh.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        seleCh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Infantes" }));
-        seleCh.setBorder(null);
-        select.add(seleCh, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 170, 30));
-
-        jLabel25.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel25.setText("Seleccione el infante");
-        select.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, 30));
-
-        Plant.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 340, 150));
 
         setPage1.setBackground(new java.awt.Color(204, 204, 204));
         setPage1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
