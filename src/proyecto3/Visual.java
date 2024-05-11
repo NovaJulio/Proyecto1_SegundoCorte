@@ -11,6 +11,7 @@ import javax.swing.table.DefaultTableModel;
 public class Visual extends javax.swing.JFrame {
 
     list list = new list();
+    int x, y;
 
     public Visual() {
         this.setUndecorated(true);
@@ -182,6 +183,16 @@ public class Visual extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+        });
 
         Plant.setBackground(new java.awt.Color(255, 255, 255));
         Plant.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -898,16 +909,7 @@ public class Visual extends javax.swing.JFrame {
             return;
         }
         if (jRadioButton1.isSelected()) {
-        setPage1false();
-        setPage2false();
-        setPage3false();
-        setPage5false();
-        setSelecttrue();
-        setPage5.setBackground(new Color(153, 153, 153));
-        setPage1.setBackground(new Color(153, 153, 153));
-        setPage2.setBackground(new Color(153, 153, 153));
-        setPage3.setBackground(new Color(153, 153, 153));
-        setPage4.setBackground(new Color(204, 204, 204));
+
         list.searchByTutorId(jTextField8.getText(), seleCh, select);
         }
         if (jRadioButton2.isSelected()) {
@@ -957,6 +959,15 @@ public class Visual extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+        x = evt.getX();
+        y = evt.getY();
+    }//GEN-LAST:event_formMousePressed
+
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
+        setLocation(evt.getXOnScreen() - x, evt.getYOnScreen() - y);
+    }//GEN-LAST:event_formMouseDragged
 
     /**
      * @param args the command line arguments
