@@ -77,6 +77,16 @@ public class Visual extends javax.swing.JFrame {
         Page5.setVisible(false);
         Page5.setEnabled(false);
     }
+    
+    public void setSelecttrue() {
+        select.setVisible(true);
+        select.setEnabled(true);
+    }
+
+    public void setSelectfalse() {
+        select.setVisible(false);
+        select.setEnabled(false);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -90,10 +100,6 @@ public class Visual extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         Plant = new javax.swing.JPanel();
-        select = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
-        seleCh = new javax.swing.JComboBox<>();
-        jLabel25 = new javax.swing.JLabel();
         Page1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -135,6 +141,10 @@ public class Visual extends javax.swing.JFrame {
         a = new javax.swing.JSlider();
         jLabel27 = new javax.swing.JLabel();
         m = new javax.swing.JComboBox<>();
+        select = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
+        seleCh = new javax.swing.JComboBox<>();
+        jLabel25 = new javax.swing.JLabel();
         Page4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabIn = new javax.swing.JTable();
@@ -175,30 +185,6 @@ public class Visual extends javax.swing.JFrame {
 
         Plant.setBackground(new java.awt.Color(255, 255, 255));
         Plant.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        select.setBackground(new java.awt.Color(153, 153, 153));
-        select.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jButton7.setText("Mostrar");
-        jButton7.setBorder(null);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        select.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 60, 30));
-
-        seleCh.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        seleCh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Infantes" }));
-        seleCh.setBorder(null);
-        select.add(seleCh, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 170, 30));
-
-        jLabel25.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel25.setText("Seleccione el infante");
-        select.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, 30));
-
-        Plant.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 340, 150));
 
         Page1.setBackground(new java.awt.Color(204, 204, 204));
         Page1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -430,6 +416,32 @@ public class Visual extends javax.swing.JFrame {
         Page3.add(m, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 160, -1));
 
         Plant.add(Page3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 940, 630));
+
+        select.setBackground(new java.awt.Color(153, 153, 153));
+        select.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jButton7.setText("Mostrar");
+        jButton7.setBorder(null);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        select.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 60, 30));
+
+        seleCh.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        seleCh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Infantes" }));
+        seleCh.setBorder(null);
+        select.add(seleCh, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 170, 30));
+
+        jLabel25.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel25.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel25.setText("Seleccione el infante");
+        select.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
+
+        Plant.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 340, 150));
 
         Page4.setBackground(new java.awt.Color(204, 204, 204));
         Page4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -757,6 +769,7 @@ public class Visual extends javax.swing.JFrame {
         setPage3false();
         setPage4false();
         setPage5false();
+        setSelectfalse();
         setPage1true();
         setPage1.setBackground(new Color(204, 204, 204));
         setPage2.setBackground(new Color(153, 153, 153));
@@ -770,6 +783,7 @@ public class Visual extends javax.swing.JFrame {
         setPage3false();
         setPage4false();
         setPage5false();
+        setSelectfalse();
         setPage2true();
         setPage2.setBackground(new Color(204, 204, 204));
         setPage1.setBackground(new Color(153, 153, 153));
@@ -784,6 +798,7 @@ public class Visual extends javax.swing.JFrame {
         setPage2false();
         setPage4false();
         setPage5false();
+        setSelectfalse();
         setPage3true();
         setPage3.setBackground(new Color(204, 204, 204));
         setPage1.setBackground(new Color(153, 153, 153));
@@ -798,6 +813,7 @@ public class Visual extends javax.swing.JFrame {
         setPage2false();
         setPage3false();
         setPage5false();
+        setSelectfalse();
         setPage4true();
         setPage4.setBackground(new Color(204, 204, 204));
         setPage1.setBackground(new Color(153, 153, 153));
@@ -811,6 +827,7 @@ public class Visual extends javax.swing.JFrame {
         setPage2false();
         setPage3false();
         setPage4false();
+        setSelectfalse();
         setPage5true();
         setPage5.setBackground(new Color(204, 204, 204));
         setPage1.setBackground(new Color(153, 153, 153));
@@ -862,7 +879,17 @@ public class Visual extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 
         JOptionPane.showMessageDialog(null, list.getDatos(seleCh.getSelectedItem().toString()));
-        select.setVisible(false);
+        setPage1false();
+        setPage2false();
+        setPage3false();
+        setPage5false();
+        setSelectfalse();
+        setPage4true();
+        setPage5.setBackground(new Color(153, 153, 153));
+        setPage1.setBackground(new Color(153, 153, 153));
+        setPage2.setBackground(new Color(153, 153, 153));
+        setPage3.setBackground(new Color(153, 153, 153));
+        setPage4.setBackground(new Color(204, 204, 204));
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -871,13 +898,23 @@ public class Visual extends javax.swing.JFrame {
             return;
         }
         if (jRadioButton1.isSelected()) {
-            list.searchByTutorId(jTextField8.getText(), seleCh, select);
-            return;
+        setPage1false();
+        setPage2false();
+        setPage3false();
+        setPage5false();
+        setSelecttrue();
+        setPage5.setBackground(new Color(153, 153, 153));
+        setPage1.setBackground(new Color(153, 153, 153));
+        setPage2.setBackground(new Color(153, 153, 153));
+        setPage3.setBackground(new Color(153, 153, 153));
+        setPage4.setBackground(new Color(204, 204, 204));
+        list.searchByTutorId(jTextField8.getText(), seleCh, select);
         }
         if (jRadioButton2.isSelected()) {
             list.getDatos(jTextField8.getText());
         }
-
+        list.fillTable(tabIn, true);
+        list.fillTable(tabTu, false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed

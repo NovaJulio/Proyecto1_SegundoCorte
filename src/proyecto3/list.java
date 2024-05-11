@@ -534,13 +534,8 @@ public class list {
 
     public String getDatos(String i) {
         Child n = searchid(i);
-        if (n==null){
-            JOptionPane.showMessageDialog(null, "No existe un infante con esa id");
-            return null;
-        }else{
         return "El peso del infante es: " + n.weight
                 + " y su talla: " + n.size;
-        }
     }
 
     public void rowCreator(DefaultTableModel t, int fila, Child n) {
